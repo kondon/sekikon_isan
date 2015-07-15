@@ -109,6 +109,9 @@ var cheackTable = function(req,res) {
  if (!err) {
  rows.forEach(function (id, row) {
    console.log("key: %s, row: %s", id, JSON.stringify(row));
+   console.log("key: %s, row: %s", id, JSON.stringify(row)[0]);
+
+   
    /*
    if(row.body.item1 == 'test'){
      king_record = Math.abs(req.body.test0 - req.body.test0);
