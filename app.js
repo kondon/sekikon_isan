@@ -108,8 +108,10 @@ var cheackTable = function(req,res) {
  db.view('items/items_view', function (err, rows) {
  if (!err) {
  rows.forEach(function (id, row) {
+   king_record = Math.abs(req.body.test0 - req.body.test0);
    console.log("key: %s, row: %s", id, JSON.stringify(row));
-   console.log("key: %s, row: %s", id, req.body.test0);
+   console.log("key: %s, row: %s", id, row.body.test0);
+   
 
  });
  } else { console.log("app.js returnTable error: " + err); }
