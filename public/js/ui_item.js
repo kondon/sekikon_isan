@@ -80,7 +80,7 @@ $(function(){
 
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
 
- $("#cheack").click(function(e){ e.preventDefault();
+function cheack(){
    console.log('DEBUG param.item1 : '+param.item1);
    console.log('DEBUG param.test0 : '+param.test0);
    console.log('DEBUG param.test1 : '+param.test1);
@@ -101,4 +101,4 @@ $(function(){
    },
    error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
    });
- });
+ };
