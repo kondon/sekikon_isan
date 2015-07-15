@@ -97,6 +97,31 @@ var returnTable = function(res) {
 };
 
 
+//sekiya「全件表示」ボタンの id=getAll, ui_item.jsの url:'/getAll'でcall
+app.post('/cheackAll', function(req, res){
+ cheackTable(req);
+});
+
+var cheackTable = function(req) {
+ // 全件検索を、作成したview名 items_view にて実行
+ console.log("bycliant test0: %s", req.body.test0);
+ db.view('items/items_view', function (err, rows) {
+ if (!err) {
+ rows.forEach(function (id, row) {
+
+ console.log("key: %s, row: %s", id, JSON.stringify(row));
+
+ });
+ } else { console.log("app.js returnTable error: " + err); }
+
+ res.send(rows);
+ });
+};
+
+
+
+
+
 app.post('/',function(req, res){
   var date = new Date();
   var now = date.toFormat("YYYY/MM/DD HH24:MI:SS");
