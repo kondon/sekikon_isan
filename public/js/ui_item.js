@@ -13,7 +13,13 @@ $(function(){
  $("#add").click(function(e){ e.preventDefault();
  var param = {};
  param.item1 = $("#item1").val() || "";
- param.item2 = "hoge";
+ param.test0 = parseInt(Math.random()*100);
+ param.test1 = parseInt(Math.random()*100);
+ param.test2 = parseInt(Math.random()*100);
+ param.test3 = parseInt(Math.random()*100);
+
+
+
 
  // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
  $.ajax({
