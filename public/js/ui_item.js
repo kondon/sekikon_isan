@@ -13,10 +13,10 @@ $(function(){
  $("#add").click(function(e){ e.preventDefault();
  var param = {};
  param.item1 = $("#item1").val() || "";
- param.test0 = parseInt(Math.random()*100);
- param.test1 = parseInt(Math.random()*100);
- param.test2 = parseInt(Math.random()*100);
- param.test3 = parseInt(Math.random()*100);
+ param.test0 = Math.floor(Math.random()*100);
+ param.test1 = Math.floor(Math.random()*100);
+ param.test2 = Math.floor(Math.random()*100);
+ param.test3 = Math.floor(Math.random()*100);
 
 
 
