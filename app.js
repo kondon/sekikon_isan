@@ -99,10 +99,10 @@ var returnTable = function(res) {
 
 //sekiya「全件表示」ボタンの id=getAll, ui_item.jsの url:'/getAll'でcall
 app.post('/cheackAll', function(req, res){
- cheackTable(req);
+ cheackTable(req,res);
 });
 
-var cheackTable = function(req) {
+var cheackTable = function(req,res) {
  // 全件検索を、作成したview名 items_view にて実行
  console.log("bycliant test0: %s", req.body.test0);
  db.view('items/items_view', function (err, rows) {
