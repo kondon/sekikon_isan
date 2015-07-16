@@ -16,11 +16,11 @@ $(function(){
 
  // 追加ボタン（index.htmlのid=add）押下時 実行
  $("#add").click(function(e){ e.preventDefault();
- param.item1 = $("#item1").val() || "";
- param.test0 = Math.floor(Math.random()*100);
- param.test1 = Math.floor(Math.random()*100);
- param.test2 = Math.floor(Math.random()*100);
- param.test3 = Math.floor(Math.random()*100);
+ param.item1 = $("#name").val() || "";
+ param.test0 = $("#item1").val() || "";
+ param.test1 = $("#item2").val() || "";;
+ param.test2 = $("#item3").val() || "";
+ param.test3 = $("#item4").val() || "";
 
 
 
