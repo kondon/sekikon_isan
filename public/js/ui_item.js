@@ -60,7 +60,8 @@ $(function(){
      success: function(rows) {
      for(var i=0; i<rows.length; i++) {
        console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-       showTable(rows[i].value);
+       //showTable(rows[i].value);
+       showTable(rows[i]);
 
      }
      },
