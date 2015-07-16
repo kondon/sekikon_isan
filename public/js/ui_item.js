@@ -1,5 +1,6 @@
 
  var param = {};
+ var name;
 $(function(){
  console.log('ui_item.js in');
 
@@ -45,13 +46,13 @@ $(function(){
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
  $("#getAll").click(function(e){ e.preventDefault();
    $("#tableItems").empty();
-   user_name = $("#name").val();
+   name.item1 = $("#name").val() || "";
 
 
    // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
    $.ajax({
    type: 'POST',
-   data: user_name,
+   data: JSON.stringify(name),
    contentType: 'application/json',
    url: '/getAll',
    success: function(rows) {
