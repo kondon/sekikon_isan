@@ -54,7 +54,7 @@ $(function(){
      // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
      $.ajax({
      type: 'POST',
-     data: {},
+     data: JSON.stringify(name),
      contentType: 'application/json',
      url: '/getAll',
      success: function(rows) {

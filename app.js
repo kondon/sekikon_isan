@@ -89,12 +89,9 @@ var returnTable = function(req,res) {
  var ans_rows;
  db.view('items/items_view', function (err, rows) {
  if (!err) {
-   var i=0;
  rows.forEach(function (id, row) {
 
    console.log("key: %s, row: %s", id, JSON.stringify(row));
-   ans_rows[i] = row;
-   i++;
  });
  } else { console.log("app.js returnTable error: " + err); }
 
