@@ -1,6 +1,6 @@
 
  var param = {};
- var name;
+ var name = {};
 $(function(){
  console.log('ui_item.js in');
 
