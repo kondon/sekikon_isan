@@ -9,6 +9,9 @@ $(function(){
  .find("tr:last")
  .append("<td>" + data.date + "</td>")
  .append("<td>" + data.item1 + "</td>")
+ .append("<td>" + "aaa" + "</td>")
+ .append("<td>" + "bbb" + "</td>")
+ .append("<td><img src = '/images/newapp-icon.png' class = 'image-rounded'></td>")
  };
 
  // 追加ボタン（index.htmlのid=add）押下時 実行
@@ -101,4 +104,12 @@ function cheack(){
    },
    error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
    });
- };
+ }
+
+//kondo file選択画面疑似操作
+function file_up_giji(){
+	var file_button = document.getElementById( 'file_button' );
+	//var file_button_giji = document.getElementById( 'file_button_giji' );
+	
+	file_button.click();
+}
