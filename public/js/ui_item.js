@@ -54,13 +54,13 @@ $(function(){
      // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
      $.ajax({
      type: 'POST',
-     data: JSON.stringify(name),
+     data: {},
      contentType: 'application/json',
      url: '/getAll',
      success: function(rows) {
      for(var i=0; i<rows.length; i++) {
-     console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-     showTable(rows[i].value);
+       console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
+       showTable(rows[i].value);
 
      }
      },
