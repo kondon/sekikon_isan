@@ -86,7 +86,7 @@ app.post('/getAll', function(req, res){
 var returnTable = function(req,res) {
   console.log("お名前は" + req.body.item1);
  // 全件検索を、作成したview名 items_view にて実行
- var ans_rows;
+ var ans_rows = [];
  var i=0;
  db.view('items/items_view', function (err, rows) {
  if (!err) {
