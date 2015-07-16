@@ -7,10 +7,10 @@ $(function(){
  var showTable = function(data) {
  $("#tableItems").append("<tr></tr>")
  .find("tr:last")
- .append("<td>" + data.date + "</td>")
- .append("<td>" + data.item1 + "</td>")
- .append("<td>" + "aaa" + "</td>")
- .append("<td>" + "bbb" + "</td>")
+ .append("<td>" + data.test0 + "</td>")
+ .append("<td>" + data.test1 + "</td>")
+ .append("<td>" + data.test2 + "</td>")
+ .append("<td>" + data.test3 + "</td>")
  .append("<td><img src = '/images/newapp-icon.png' class = 'image-rounded'></td>")
  };
 
@@ -45,11 +45,13 @@ $(function(){
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
  $("#getAll").click(function(e){ e.preventDefault();
    $("#tableItems").empty();
+   user_name = $("#name").val();
+
 
    // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
    $.ajax({
    type: 'POST',
-   data: {},
+   data: user_name,
    contentType: 'application/json',
    url: '/getAll',
    success: function(rows) {

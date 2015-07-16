@@ -80,10 +80,11 @@ app.post('/removeAll', function(req, res){
 
 //「全件表示」ボタンの id=getAll, ui_item.jsの url:'/getAll'でcall
 app.post('/getAll', function(req, res){
- returnTable(res);
+ returnTable(req,res);
 });
 
-var returnTable = function(res) {
+var returnTable = function(req,res) {
+  console.log("お名前は" + req;
  // 全件検索を、作成したview名 items_view にて実行
  db.view('items/items_view', function (err, rows) {
  if (!err) {
