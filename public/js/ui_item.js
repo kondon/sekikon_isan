@@ -44,27 +44,29 @@ $(function(){
  });
 
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
- $("#getAll").click(function(e){ e.preventDefault();
-   $("#tableItems").empty();
-   name.item1 = $("#name").val() || "";
+ $("#getAll").click(function(e){
+      e.preventDefault();
+     $("#tableItems").empty();
+     name.item1 = $("#name").val() || "";
+     console.log('name.item1 '+name.item1);
 
 
-   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
-   $.ajax({
-   type: 'POST',
-   data: JSON.stringify(name),
-   contentType: 'application/json',
-   url: '/getAll',
-   success: function(rows) {
-   for(var i=0; i<rows.length; i++) {
-   console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-   showTable(rows[i].value);
+     // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
+     $.ajax({
+     type: 'POST',
+     data: JSON.stringify(name),
+     contentType: 'application/json',
+     url: '/getAll',
+     success: function(rows) {
+     for(var i=0; i<rows.length; i++) {
+     console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
+     showTable(rows[i].value);
 
-   }
-   },
-   error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
-   });
- });
+     }
+     },
+     error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
+     });
+});
 
  // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
  $("#removeAll").click(function(e){ e.preventDefault();
