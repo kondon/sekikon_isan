@@ -106,25 +106,30 @@ var cheackTable = function(req,res) {
  // 全件検索を、作成したview名 items_view にて実行
  console.log("bycliant test0: %s", req.body.test0);
  db.view('items/items_view', function (err, rows) {
+   var ans;
  if (!err) {
- rows.forEach(function (id, row) {
-   console.log("key: %s, row: %s", id, JSON.stringify(row));
-   console.log("key: %s, row: %s", id, (row.item1));
-
-
-   /*
-   if(row.body.item1 == 'test'){
-     king_record = Math.abs(req.body.test0 - req.body.test0);
+   var king_record = 1000;
+   var king_record_id = -1;
+   rows.forEach(function (id, row) {
+     if(req.body.item1 == row.item1){
+       if(king_record > Math.abs(req.body.test0 - row.test0)){
+         king_record = Math.abs(req.body.test0 - row.test0);
+         king_record_id = row.test2;
+       }
+     }
      console.log("key: %s, row: %s", id, JSON.stringify(row));
-     console.log("key: %s, row: %s", id, row.body.test0);
-   }
-   */
+     console.log("key: %s, row: %s", id, (row.item1));
 
+   });
+   ans = king_record_id;
 
- });
- } else { console.log("app.js returnTable error: " + err); }
+ }
+ else {
+   console.log("app.js returnTable error: " + err);
+   ans = -1;
+ }
 
- res.send(rows);
+ res.send(ans);
  });
 };
 

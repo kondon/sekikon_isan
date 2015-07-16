@@ -97,10 +97,7 @@ function cheack(){
    contentType: 'application/json',
    url: '/cheackAll',
    success: function(rows) {
-   for(var i=0; i<rows.length; i++) {
-   console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-
-   }
+      alert("答えは"+ rows);
    },
    error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
    });
@@ -110,6 +107,6 @@ function cheack(){
 function file_up_giji(){
 	var file_button = document.getElementById( 'file_button' );
 	//var file_button_giji = document.getElementById( 'file_button_giji' );
-	
+
 	file_button.click();
 }
