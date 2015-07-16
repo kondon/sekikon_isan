@@ -109,7 +109,7 @@ var cheackTable = function(req,res) {
  if (!err) {
  rows.forEach(function (id, row) {
    console.log("key: %s, row: %s", id, JSON.stringify(row));
-   console.log("key: %s, row: %s", id, (row.item1);
+   console.log("key: %s, row: %s", id, (row.item1));
 
 
    /*
