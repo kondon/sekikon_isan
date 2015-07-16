@@ -84,16 +84,21 @@ app.post('/getAll', function(req, res){
 });
 
 var returnTable = function(req,res) {
-  console.log("お名前は" + req;
+  console.log("お名前は" + req);
  // 全件検索を、作成したview名 items_view にて実行
+ var ans_rows;
  db.view('items/items_view', function (err, rows) {
  if (!err) {
+   var i=0;
  rows.forEach(function (id, row) {
- console.log("key: %s, row: %s", id, JSON.stringify(row));
+
+   console.log("key: %s, row: %s", id, JSON.stringify(row));
+   ans_rows[i] = row;
+   i++;
  });
  } else { console.log("app.js returnTable error: " + err); }
 
- res.send(rows);
+ res.send(ans_rows);
  });
 };
 
