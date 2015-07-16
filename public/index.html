@@ -15,84 +15,97 @@
         <p><a class="btn btn-lg midashi-btn" role="button">もっと詳しく &raquo;</a></p>
       </div>
     </header>
- <div class="container">
-	 <div class="row">
-	 	<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<table class = "table table-bordered table-striped" id="dataTable">
-				<thead>
-					 <tr>
-					 	<th>着丈</th><th>肩幅</th><th>身肌</th><th>そで丈</th>
-					 </tr>
-				</thead>
-				<tbody id='tableItems'></tbody>
-			</table>
-		</div>
-	 </div>
- </div>
- <div class = "container">
-	<div class = "row">
- 		<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	 		<div class="btn-group btn-group-justified" style="width:100%;"data-toggle="buttons" role="buttong">
-	 			<div class="btn-group" role="buttong">
-					<button type="button"class="btn btn-default" name="options" id="getAll" value = "全権表示">
-						<span class="glyphicon glyphicon-search">全権表示</span>
-					</button>
+
+<ul class="nav nav-tabs">
+  <li><a href="#prof1" data-toggle="tab">Your closet</a></li>
+  <li><a href="#input1" data-toggle="tab">Sizeinput</a></li>
+  <li><a href="#sets1" data-toggle="tab">aaa</a></li>
+</ul><!-- nav-tabs -->
+
+<div class="tab-content">
+	<div class="tab-pane active" id="prof1">
+		<div class="container" style = "padding:10px;">
+			<div class="row">
+			 	<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<table class = "table table-bordered table-striped" id="dataTable">
+						<thead>
+							 <tr>
+							 	<th>着丈</th><th>肩幅</th><th>身肌</th><th>そで丈</th>
+							 </tr>
+						</thead>
+						<tbody id='tableItems'></tbody>
+					</table>
 				</div>
-				<div class="btn-group" role="buttong">
-					<button type="button"class="btn btn-default" name="options" id="removeAll" value = "全権削除">
-						<span class="glyphicon glyphicon-trash">全権削除</span>
-					</button>
+			</div>
+		</div>
+		<div class = "container" style = "padding:10px;">
+			<div class = "row">
+				<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+					<div class="btn-group btn-group-justified" style="width:100%;"data-toggle="buttons" role="buttong">
+						<div class="btn-group" role="buttong">
+							<button type="button"class="btn btn-default" name="options" id="getAll" value = "全権表示">
+								<span class="glyphicon glyphicon-search">全権表示</span>
+							</button>
+						</div>
+						<div class="btn-group" role="buttong">
+							<button type="button"class="btn btn-default" name="options" id="removeAll" value = "全権削除">
+								<span class="glyphicon glyphicon-trash">全権削除</span>
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
- </div>
- <div class = "container" style = "padding:10px;">
-	<div class = "row">
-		<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<table class = "table table-bordered table-striped" id="dataTable">
-				<thead>
-					<tr>
-					 	<th>着丈</th><th>肩幅</th><th>身肌</th><th>そで丈</th><th>追加</th><th>チェック</th>
-					</tr>
-				</thead>
-				<tbody id='inputitem'>
-					<tr>
-						<td>
-							<input type="text" id="item1" style = "width: 100%" value="13IPIRSA/1.03" >
-						</td>
-						<td>
-							<input type="text" id="item2" style = "width: 100%" value="13IPIRSA/1.03" >
-						</td>
-						<td>
-							<input type="text" id="item3" style = "width: 100%" value="13IPIRSA/1.03" >
-						</td>
-						<td>
-							<input type="text" id="item4" style = "width: 100%" value="13IPIRSA/1.03" >
-						</td>
-						<td>
-							<button value="追加" id="add"> 
-								<span class="glyphicon glyphicon-plus"></span>
-							</button>
-						</td>
-						<td>
-							<button value="チェック" id="cheack" onClick="cheack()">
-								<span class="glyphicon glyphicon-ok"></span>
-							</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<!--
-			<span>項目名: </span><span><input type="text" id="item1"></span>
-			<span>項目名: </span><span><input type="text" id="item2"></span>
-			<span>項目名: </span><span><input type="text" id="item3"></span>
-			<span>項目名: </span><span><input type="text" id="item4"></span>
-			<button value="追加" id="add"> 追加 </button>
-			<button value="チェック" id="cheack" onClick="cheack()"> チェック </button>
-			-->
+	<div class="tab-pane" id="input1">
+		<div class = "container" style = "padding:10px;">
+			<div class = "row">
+				<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<table class = "table table-bordered table-striped" id="dataTable">
+						<thead>
+							<tr>
+							 	<th>着丈</th><th>肩幅</th><th>身肌</th><th>そで丈</th><th>追加</th><th>チェック</th>
+							</tr>
+						</thead>
+						<tbody id='inputitem'>
+							<tr>
+								<td>
+									<input type="text" id="item1" style = "width: 100%" value="50" >
+								</td>
+								<td>
+									<input type="text" id="item2" style = "width: 100%" value="50" >
+								</td>
+								<td>
+									<input type="text" id="item3" style = "width: 100%" value="50" >
+								</td>
+								<td>
+									<input type="text" id="item4" style = "width: 100%" value="50" >
+								</td>
+								<td>
+									<button value="追加" id="add"> 
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</td>
+								<td>
+									<button value="チェック" id="cheack" onClick="cheack()">
+										<span class="glyphicon glyphicon-ok"></span>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!--
+					<span>項目名: </span><span><input type="text" id="item1"></span>
+					<span>項目名: </span><span><input type="text" id="item2"></span>
+					<span>項目名: </span><span><input type="text" id="item3"></span>
+					<span>項目名: </span><span><input type="text" id="item4"></span>
+					<button value="追加" id="add"> 追加 </button>
+					<button value="チェック" id="cheack" onClick="cheack()"> チェック </button>
+					-->
+				</div>
+			</div>
 		</div>
 	</div>
- </div>
+</div>
 </body>
 </html>
