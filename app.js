@@ -93,7 +93,7 @@ var returnTable = function(req,res) {
  rows.forEach(function (id, row) {
    console.log("key: %s, row: %s", id, JSON.stringify(row));
    if(req.body.item1 == row.item1){
-      ans_rows[i] = JSON.stringify(row);
+      ans_rows[i] = (row);
          i++;
     }
  });
