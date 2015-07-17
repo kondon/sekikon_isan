@@ -20,7 +20,7 @@ $(function(){
 
  // tops_追加ボタン（index.htmlのid=add）押下時 実行
  $("#tops_add").click(function(e){ e.preventDefault();
- param.username = $("#name").val() || "";
+ param.username = $("#username1").val() || "";
  param.itemname = $("#tops_name").val() || "";
  param.item1 = $("#tops_item1").val() || "";
  param.test1 = $("#tops_item2").val() || "";
@@ -199,7 +199,7 @@ function aaaa(){
 }
 */
 function delete1(obj){
-  param.username = $("#name").val() || "";
+  param.username = $("#usename1").val() || "";
   param.itemname = obj || "";
 
   $.ajax({
