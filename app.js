@@ -80,19 +80,26 @@ app.post('/removeAll', function(req, res){
 
 //「全件表示」ボタンの id=getAll, ui_item.jsの url:'/getAll'でcall
 app.post('/getAll', function(req, res){
- returnTable(res);
+ returnTable(req,res);
 });
 
-var returnTable = function(res) {
+var returnTable = function(req,res) {
+  console.log("お名前は" + req.body.item1);
  // 全件検索を、作成したview名 items_view にて実行
+ var ans_rows = [];
+ var i=0;
  db.view('items/items_view', function (err, rows) {
  if (!err) {
  rows.forEach(function (id, row) {
- console.log("key: %s, row: %s", id, JSON.stringify(row));
+   console.log("key: %s, row: %s", id, JSON.stringify(row));
+   if(req.body.item1 == row.item1){
+      ans_rows[i] = (row);
+         i++;
+    }
  });
  } else { console.log("app.js returnTable error: " + err); }
 
- res.send(rows);
+ res.send(ans_rows);
  });
 };
 
