@@ -63,15 +63,19 @@ app.post('/add', function(req, res){
 
 //「全件削除」ボタンの id=removeAll, ui_item.jsの url:'/removeAll'でcall
 app.post('/removeAll', function(req, res){
+  console.log("お名前は" + req.body.item1);
 
  // 全件検索を、作成したview名 items_view にて実行
  db.view('items/items_view', function (err, rows) {
  if (!err) {
  rows.forEach(function (id, row) {
- db.remove(id);
- console.log("removed key is: %s", id);
- });
- } else { console.log("app.js db.remove error: " + err); }
+   if(req.body.item1 == row.item1){
+     db.remove(id);
+     console.log("removed key is: %s", id);
+   }
+ );
+ }
+ else { console.log("app.js db.remove error: " + err); }
 
  });
 
