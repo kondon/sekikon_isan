@@ -13,10 +13,6 @@ var express = require('express');
 var cfenv = require('cfenv');
 
 
-//aws
-var s3 = require('./mymodule/aws-sdk-2.0.0-rc1.min.js');
-
-
 
 // create a new express server
 var app = express();
