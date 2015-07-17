@@ -1,10 +1,10 @@
 <html>
  <head>
  <title>Node.js Ajax Cloudant Sample</title>
- <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+ <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
- <script type="text/javascript" src="/js/ui_item.js"></script>
- <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+ <script type="text/javascript" src="./js/ui_item.js"></script>
+ <script src="./js/bootstrap.min.js" type="text/javascript"></script>
  </head>
 
  <body>
@@ -104,7 +104,7 @@
 									<input type="text" id="item4" style = "width: 100%" value="50" >
 								</td>
 								<td>
-									<button value="追加" id="add"> 
+									<button value="追加" id="add">
 										<span class="glyphicon glyphicon-plus"></span>
 									</button>
 								</td>
@@ -139,10 +139,16 @@
 			<div class = "container" style = "padding:10px;">
 				<div class = "row">
 					<input type="text" id="name" style = "width: 100%" value="" >
+          <button type="button" onClick="aaa()"></button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 </body>
+<script type="text/javascript">
+$(function(){
+  $(".class名").chosen();
+});
+</script>
 </html>

@@ -1,5 +1,6 @@
 
  var param = {};
+ var poro ={};
 $(function(){
  console.log('ui_item.js in');
 
@@ -45,7 +46,11 @@ $(function(){
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
  $("#getAll").click(function(e){ e.preventDefault();
    $("#tableItems").empty();
+   var y =$("#name").val() || "";
+ 　　console.log(y);
+   poro.a = y;
 
+   console.log(JSON.stringify(poro));
    // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
    $.ajax({
    type: 'POST',
@@ -109,4 +114,12 @@ function file_up_giji(){
 	//var file_button_giji = document.getElementById( 'file_button_giji' );
 
 	file_button.click();
+}
+
+function aaa(){
+  var y =$("#name").val();
+　　console.log(y);
+  poro.a = y;
+
+  console.log(JSON.stringify(poro));
 }
