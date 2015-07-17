@@ -140,7 +140,10 @@ var cheackTable = function(req,res) {
  });
 };
 
-
+app.post('/test', function(req, res){
+ console.log("DEBUG test0: %s", req.body.param0);
+ res.send('hoge');
+});
 
 
 
