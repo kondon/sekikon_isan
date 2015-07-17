@@ -73,6 +73,7 @@ app.post('/removeAll', function(req, res){
      db.remove(id);
      console.log("removed key is: %s", id);
    }
+  }
  );
  }
  else { console.log("app.js db.remove error: " + err); }
