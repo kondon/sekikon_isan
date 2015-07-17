@@ -1,7 +1,7 @@
 
  var param = {};
  var name_input = {};
- var delete = {};
+ var deletea = {};
  //var aaadao = {test0:'0',test1:'1',test2:'2',test3:'3',date:'333'};
 $(function(){
  console.log('ui_item.js in');
@@ -26,7 +26,7 @@ $(function(){
  param.test1 = $("#tops_item2").val() || "";
  param.test2 = $("#tops_item3").val() || "";
  param.test3 = $("#tops_item4").val() || "";
- param.itemtype = 0
+ param.itemtype = 0;
 
  // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
  $.ajax({
