@@ -1,6 +1,6 @@
 
  var param = {};
- var poro ={};
+ var name_input = {};
 $(function(){
  console.log('ui_item.js in');
 
@@ -8,12 +8,13 @@ $(function(){
  var showTable = function(data) {
  $("#tableItems").append("<tr></tr>")
  .find("tr:last")
- .append("<td>" + data.date + "</td>")
- .append("<td>" + data.item1 + "</td>")
- .append("<td>" + "aaa" + "</td>")
- .append("<td>" + "bbb" + "</td>")
+ .append("<td>" + data.test0 + "</td>")
+ .append("<td>" + data.test1 + "</td>")
+ .append("<td>" + data.test2 + "</td>")
+ .append("<td>" + data.test3 + "</td>")
  .append("<td><img src = '/images/newapp-icon.png' class = 'image-rounded'></td>")
  };
+ 
 
  // 追加ボタン（index.htmlのid=add）押下時 実行
  $("#add").click(function(e){ e.preventDefault();
@@ -44,29 +45,30 @@ $(function(){
  });
 
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
- $("#getAll").click(function(e){ e.preventDefault();
-   $("#tableItems").empty();
-   var y =$("#name").val() || "";
- 　　console.log(y);
-   poro.a = y;
+ $("#getAll").click(function(e){
+      e.preventDefault();
+     $("#tableItems").empty();
+     name_input.item1 = $("#name").val() || "";
+     console.log('name.item1 '+name_input.item1);
 
-   console.log(JSON.stringify(poro));
-   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
-   $.ajax({
-   type: 'POST',
-   data: {},
-   contentType: 'application/json',
-   url: '/getAll',
-   success: function(rows) {
-   for(var i=0; i<rows.length; i++) {
-   console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-   showTable(rows[i].value);
 
-   }
-   },
-   error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
-   });
- });
+     // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
+     $.ajax({
+     type: 'POST',
+     data: JSON.stringify(name_input),
+     contentType: 'application/json',
+     url: '/getAll',
+     success: function(rows) {
+     for(var i=0; i<rows.length; i++) {
+       console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
+       //showTable(rows[i].value);
+       showTable(rows[i]);
+
+     }
+     },
+     error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
+     });
+});
 
  // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
  $("#removeAll").click(function(e){ e.preventDefault();
@@ -114,12 +116,4 @@ function file_up_giji(){
 	//var file_button_giji = document.getElementById( 'file_button_giji' );
 
 	file_button.click();
-}
-
-function aaa(){
-  var y =$("#name").val();
-　　console.log(y);
-  poro.a = y;
-
-  console.log(JSON.stringify(poro));
 }
