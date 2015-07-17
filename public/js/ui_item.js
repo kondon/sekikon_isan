@@ -14,6 +14,7 @@ $(function(){
  .append("<td>" + data.test3 + "</td>")
  .append("<td><img src = '/images/newapp-icon.png' class = 'image-rounded'></td>")
  };
+ 
 
  // 追加ボタン（index.htmlのid=add）押下時 実行
  $("#add").click(function(e){ e.preventDefault();
