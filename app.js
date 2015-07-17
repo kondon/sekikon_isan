@@ -12,6 +12,12 @@ var express = require('express');
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
+
+//aws
+var s3 = require('./mymodule/aws-sdk-2.0.0-rc1.min.js');
+
+
+
 // create a new express server
 var app = express();
 
@@ -63,20 +69,49 @@ app.post('/add', function(req, res){
 
 //「全件削除」ボタンの id=removeAll, ui_item.jsの url:'/removeAll'でcall
 app.post('/removeAll', function(req, res){
+  console.log("お名前は" + req.body.item1);
 
  // 全件検索を、作成したview名 items_view にて実行
  db.view('items/items_view', function (err, rows) {
  if (!err) {
  rows.forEach(function (id, row) {
- db.remove(id);
- console.log("removed key is: %s", id);
- });
- } else { console.log("app.js db.remove error: " + err); }
+   if(req.body.item1 == row.item1){
+     db.remove(id);
+     console.log("removed key is: %s", id);
+   }
+  }
+ );
+ }
+ else { console.log("app.js db.remove error: " + err); }
 
  });
 
  res.send({});
 });
+
+//「1件削除」ボタン
+app.post('/remove', function(req, res){
+  console.log("お名前は" + req.body.username);
+  console.log("削除id " + req.body.itemid);
+
+ // 全件検索を、作成したview名 items_view にて実行
+ db.view('items/items_view', function (err, rows) {
+ if (!err) {
+ rows.forEach(function (id, row) {
+   if(req.body.username == row.username && req.body.itemid == row.itemid){
+     db.remove(id);
+     console.log("removed key is: %s", id);
+   }
+  }
+ );
+ }
+ else { console.log("app.js db.remove error: " + err); }
+
+ });
+
+ res.send({});
+});
+
 
 //「全件表示」ボタンの id=getAll, ui_item.jsの url:'/getAll'でcall
 app.post('/getAll', function(req, res){
@@ -140,7 +175,10 @@ var cheackTable = function(req,res) {
  });
 };
 
-
+app.post('/test', function(req, res){
+ console.log("DEBUG test0: %s", req.body.param0);
+ res.send('hoge');
+});
 
 
 
