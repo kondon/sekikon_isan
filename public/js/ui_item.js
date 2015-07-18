@@ -5,7 +5,7 @@
  var aaadao = {test0:'0',test1:'1',test2:'2',test3:'3',date:'333'};
  var myName;
 
-$(function(){
+//$(function(){
    console.log('ui_item.js in');
    GetQueryString();
    console.log('こんにちわ　'+myName+'さん');
@@ -147,7 +147,7 @@ $("#other_add").click(function(e){ e.preventDefault();
 
    $("#tableItems").empty();
    });
- });
+ //});
 
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
 
