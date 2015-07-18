@@ -14,6 +14,7 @@ $(function(){
    // サーバから取得したデータを、htmlテーブルに追加
    var showTable = function(data) {
     console.log(data.username);
+
     $("#tableItems").append("<tr></tr>")
              .find("tr:last")
              .append("<td>" + data.itemname + "</td>")
@@ -42,7 +43,7 @@ $(function(){
        url: '/add',
        success: function(data) {
        console.log('success add: ' + JSON.stringify(data));
-       showTable(data);
+       //showTable(data);
        },
        error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
        });
@@ -132,8 +133,7 @@ $("#other_add").click(function(e){ e.preventDefault();
 
 
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
- $("#getAll").click(function(e){
-      e.preventDefault();
+ function showall(){
      $("#tableItems").empty();
      name_input.viewername = myName || "";
      console.log('name.item1 '+name_input.viewername);
@@ -155,7 +155,7 @@ $("#other_add").click(function(e){ e.preventDefault();
      },
      error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
      });
-});
+};
 
  // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
  $("#testtest").click(function(e){ e.preventDefault();
@@ -210,8 +210,11 @@ function aaaa(){
 */
 function delete1(obj){
   console.log(obj);
-  param.username = $("#usename1").val() || "";
+  param.username = myName || "";
   param.itemname = obj || "";
+
+  console.log('param.username '+ param.username);
+  console.log('param.itemname '+ param.itemname);
 
   $.ajax({
   type: 'POST',
@@ -220,6 +223,9 @@ function delete1(obj){
   url: '/remove',
   success: function(rows) {
      alert("答えは"+ rows);
+     $("#tableItems").empty();
+     showall();
+
   },
   error: function(data) { console.log('error remove: ' + JSON.stringify(data)); }
   });

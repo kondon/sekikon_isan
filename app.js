@@ -91,7 +91,7 @@ app.post('/removeAll', function(req, res){
 //「1件削除」ボタン
 app.post('/remove', function(req, res){
   console.log("お名前は" + req.body.username);
-  console.log("削除id " + req.body.itemid);
+  console.log("削除id " + req.body.itemname);
 
  // 全件検索を、作成したview名 items_view にて実行
  db.view('items/items_view', function (err, rows) {
@@ -127,6 +127,7 @@ var returnTable = function(req,res) {
  rows.forEach(function (id, row) {
    console.log("key: %s, row: %s", id, JSON.stringify(row));
    if(req.body.viewername == row.username){
+
       ans_rows[i] = (row);
          i++;
     }
