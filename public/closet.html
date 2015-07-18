@@ -7,7 +7,7 @@
  <script src="./js/bootstrap.min.js" type="text/javascript"></script>
  </head>
 
- <body onLoad="init()">
+ <body onLoad="selectinit();init();">
    <header class="jumbotron">
       <div class="container">
         <h1>YOUR CLOSET</h1>
@@ -337,7 +337,7 @@
 </body>
 <script>
 
-function init(){
+function selectinit(){
   for(var i=0; i<100;i++){
     $(".select").append("<option value="+i+">"+i+"</option>");
   }
