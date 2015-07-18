@@ -212,7 +212,7 @@ $(function(){
 
 // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
 
-  $(".delite_button").click(function(){
+  $('.delite_button').on('click',function(){
     alert('hoge')
 
     param.username = myName || "";
