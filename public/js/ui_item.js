@@ -218,7 +218,7 @@ function makedelite(){
     alert('hoge')
 
     param.username = myName || "";
-    param.itemname =  $(this).attr('id') || "";
+    param.id_counter =  $(this).attr('id') || "";
 
     console.log('param.username '+ param.username);
     console.log('param.itemname '+ param.id_counter);
