@@ -76,88 +76,88 @@ $(function(){
        error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
        });
    });
-/*
- $("#testtest").click(function(e){ e.preventDefault();
-   showTable(aaadao);
- });
-*/
+    /*
+     $("#testtest").click(function(e){ e.preventDefault();
+       showTable(aaadao);
+     });
+    */
 
 
- //
-$("#bottom_add").click(function(e){ e.preventDefault();
-   param.username = $("#name").val() || "";
-   param.itemname = $("#bottom_name").val() || "";
-   param.item1 = $("#bottom_item1").val() || "";
-   param.test1 = $("#bottom_item2").val() || "";
-   param.test2 = $("#bottom_item3").val() || "";
-   param.test3 = $("#bottom_item4").val() || "";
-   param.itemtype = 1
+     //
+    $("#bottom_add").click(function(e){ e.preventDefault();
+               param.username = $("#name").val() || "";
+               param.itemname = $("#bottom_name").val() || "";
+               param.item1 = $("#bottom_item1").val() || "";
+               param.test1 = $("#bottom_item2").val() || "";
+               param.test2 = $("#bottom_item3").val() || "";
+               param.test3 = $("#bottom_item4").val() || "";
+               param.itemtype = 1
 
-   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
-   $.ajax({
-     type: 'POST',
-     data: JSON.stringify(param),
-     contentType: 'application/json',
-     url: '/add',
-     success: function(data) {
-       console.log('success add: ' + JSON.stringify(data));
-       showTable(data);
-      },
-     error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
-      });
- });
+           // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
+           $.ajax({
+             type: 'POST',
+             data: JSON.stringify(param),
+             contentType: 'application/json',
+             url: '/add',
+             success: function(data) {
+               console.log('success add: ' + JSON.stringify(data));
+               showTable(data);
+              },
+             error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
+              });
+    });
 
 
  // shoes_追加ボタン（index.htmlのid=add）押下時 実行
-$("#shoes_add").click(function(e){ e.preventDefault();
-   param.username = $("#name").val() || "";
-   param.itemname = $("#shoes_name").val() || "";
-   param.item1 = $("#shoes_item1").val() || "";
-   param.test1 = $("#shoes_item2").val() || "";
-   param.test2 = $("#shoes_item3").val() || "";
-   param.test3 = $("#shoes_item4").val() || "";
-   param.itemtype = 2
+    $("#shoes_add").click(function(e){ e.preventDefault();
+       param.username = $("#name").val() || "";
+       param.itemname = $("#shoes_name").val() || "";
+       param.item1 = $("#shoes_item1").val() || "";
+       param.test1 = $("#shoes_item2").val() || "";
+       param.test2 = $("#shoes_item3").val() || "";
+       param.test3 = $("#shoes_item4").val() || "";
+       param.itemtype = 2
 
-   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
-   $.ajax({
-   type: 'POST',
-   data: JSON.stringify(param),
-   contentType: 'application/json',
-   url: '/add',
-   success: function(data) {
-     console.log('success add: ' + JSON.stringify(data));
-     showTable(data);
-   },
-   error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
-   });
- });
+       // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
+       $.ajax({
+       type: 'POST',
+       data: JSON.stringify(param),
+       contentType: 'application/json',
+       url: '/add',
+       success: function(data) {
+         console.log('success add: ' + JSON.stringify(data));
+         showTable(data);
+       },
+       error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
+       });
+     });
 
  // other_追加ボタン（index.htmlのid=add）押下時 実行
-$("#other_add").click(function(e){ e.preventDefault();
-   param.username = $("#name").val() || "";
-   param.itemname = $("#other_name").val() || "";
-   param.item1 = $("#other_item1").val() || "";
-   param.test1 = $("#other_item2").val() || "";
-   param.test2 = $("#other_item3").val() || "";
-   param.test3 = $("#other_item4").val() || "";
-   param.itemtype = 2
+    $("#other_add").click(function(e){ e.preventDefault();
+       param.username = $("#name").val() || "";
+       param.itemname = $("#other_name").val() || "";
+       param.item1 = $("#other_item1").val() || "";
+       param.test1 = $("#other_item2").val() || "";
+       param.test2 = $("#other_item3").val() || "";
+       param.test3 = $("#other_item4").val() || "";
+       param.itemtype = 2
 
-   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
-   $.ajax({
-   type: 'POST',
-   data: JSON.stringify(param),
-   contentType: 'application/json',
-   url: '/add',
-   success: function(data) {
-     console.log('success add: ' + JSON.stringify(data));
-     showTable(data);
-   },
-   error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
- });
+       // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
+       $.ajax({
+             type: 'POST',
+             data: JSON.stringify(param),
+             contentType: 'application/json',
+             url: '/add',
+             success: function(data) {
+               console.log('success add: ' + JSON.stringify(data));
+               showTable(data);
+             },
+             error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
+           });
 
- // 入力項目名を空白に
- //$("#item1").val('');
- });
+       // 入力項目名を空白に
+       //$("#item1").val('');
+    });
 
 
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
@@ -170,50 +170,50 @@ $("#other_add").click(function(e){ e.preventDefault();
 
      // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
      $.ajax({
-     type: 'POST',
-     data: JSON.stringify(name_input),
-     contentType: 'application/json',
-     url: '/getAll',
-     success: function(rows) {
-     for(var i=0; i<rows.length; i++) {
-       console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-       //showTable(rows[i].value);
-       showTable(rows[i]);
+           type: 'POST',
+           data: JSON.stringify(name_input),
+           contentType: 'application/json',
+           url: '/getAll',
+           success: function(rows) {
+           for(var i=0; i<rows.length; i++) {
+             console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
+             //showTable(rows[i].value);
+             showTable(rows[i]);
 
-     }
-     },
-     error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
+           }
+           },
+           error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
      });
-});
+   });
 
-function showall(){
-  $("#tableItems").empty();
-  name_input.viewername = myName || "";
-  console.log('name.item1 '+name_input.viewername);
+    function showall(){
+      $("#tableItems").empty();
+      name_input.viewername = myName || "";
+      console.log('name.item1 '+name_input.viewername);
 
 
-  // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
-  $.ajax({
-  type: 'POST',
-  data: JSON.stringify(name_input),
-  contentType: 'application/json',
-  url: '/getAll',
-  success: function(rows) {
-  for(var i=0; i<rows.length; i++) {
-    console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-    //showTable(rows[i].value);
-    showTable(rows[i]);
+      // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
+      $.ajax({
+      type: 'POST',
+      data: JSON.stringify(name_input),
+      contentType: 'application/json',
+      url: '/getAll',
+      success: function(rows) {
+      for(var i=0; i<rows.length; i++) {
+        console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
+        //showTable(rows[i].value);
+        showTable(rows[i]);
 
-  }
-  },
-  error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
-  });
-}
+      }
+      },
+      error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
+      });
+    }
 
 // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
 
-  $('.delite_button').click(function(){
-
+  $(".delite_button").click(function(){
+    alert('hoge')
 
     param.username = myName || "";
     param.itemname =  $(this).attr('id') || "";
