@@ -13,13 +13,14 @@ $(function(){
 
    // サーバから取得したデータを、htmlテーブルに追加
    var showTable = function(data) {
-    console.log(data.date);
+    console.log(data.username);
     $("#tableItems").append("<tr></tr>")
              .find("tr:last")
-             .append("<td>" + data.test0 + "</td>")
-             .append("<td>" + data.test1 + "</td>")
-             .append("<td>" + data.test2 + "</td>")
-             .append("<td>" + data.test3 + "</td>")
+             .append("<td>" + data.itemname + "</td>")
+             .append("<td>" + data.item1 + "</td>")
+             .append("<td>" + data.item2 + "</td>")
+             .append("<td>" + data.item3 + "</td>")
+             .append("<td>" + data.item4 + "</td>")
              .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'image-rounded' onClick=delete1("+data.id_counter+")></td>")
     };
 
