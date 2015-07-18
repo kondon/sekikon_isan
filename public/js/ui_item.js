@@ -15,7 +15,7 @@ $(function(){
  .append("<td>" + data.test1 + "</td>")
  .append("<td>" + data.test2 + "</td>")
  .append("<td>" + data.test3 + "</td>")
- .append("<td><img src = './images/newapp-icon.png' id = "+data.date+" class = 'image-rounded' onClick=delete1("+data.date+")></td>")
+ .append("<td><img src = '/images/newapp-icon.png' id = "+data.date+" class = 'image-rounded' onClick=delete1("+data.date+")></td>")
  };
 
  // tops_追加ボタン（index.htmlのid=add）押下時 実行
@@ -71,8 +71,8 @@ $(function(){
  error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
  });
  });
- });
-/*
+
+
  // shoes_追加ボタン（index.htmlのid=add）押下時 実行
  $("#shoes_add").click(function(e){ e.preventDefault();
  param.username = $("#name").val() || "";
@@ -119,12 +119,11 @@ $(function(){
  },
  error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
  });
- });
 
  // 入力項目名を空白に
  $("#item1").val('');
  });
- });
+
 
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
  $("#getAll").click(function(e){
@@ -168,7 +167,7 @@ $(function(){
  $("#tableItems").empty();
  });
  });
-*/
+
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
 
 function cheack(){
