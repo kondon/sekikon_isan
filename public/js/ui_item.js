@@ -221,7 +221,7 @@ function makedelite(){
     param.itemname =  $(this).attr('id') || "";
 
     console.log('param.username '+ param.username);
-    console.log('param.itemname '+ param.itemname);
+    console.log('param.itemname '+ param.id_counter);
 
     $.ajax({
     type: 'POST',

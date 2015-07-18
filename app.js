@@ -91,13 +91,13 @@ app.post('/removeAll', function(req, res){
 //「1件削除」ボタン
 app.post('/remove', function(req, res){
   console.log("お名前は" + req.body.username);
-  console.log("削除id " + req.body.itemname);
+  console.log("削除id " + req.body.id_counter);
 
  // 全件検索を、作成したview名 items_view にて実行
  db.view('items/items_view', function (err, rows) {
  if (!err) {
  rows.forEach(function (id, row) {
-   if(req.body.username == row.username && req.body.itemid == row.itemid){
+   if(req.body.username == row.username && req.body.id_counter == row.id_counter){
      db.remove(id);
      console.log("removed key is: %s", id);
    }
