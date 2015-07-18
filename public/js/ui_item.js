@@ -5,7 +5,7 @@
  var aaadao = {test0:'0',test1:'1',test2:'2',test3:'3',date:'333'};
  var myName;
 
- function GetQueryString()
+ function init()
  {
      var result = {};
      if( 1 < window.location.search.length )
