@@ -50,7 +50,7 @@ $(function(){
              .append("<td>" + data.item2 + "</td>")
              .append("<td>" + data.item3 + "</td>")
              .append("<td>" + data.item4 + "</td>")
-             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'delite_button image-rounded' onClick=delete1("+data.id_counter+")></td>")
+             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>")
     };
 
    // tops_追加ボタン（index.htmlのid=add）押下時 実行
