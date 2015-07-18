@@ -29,15 +29,16 @@
          }
      }
      myName = result["namae"];
+     document.getElementById('username1').value=myName;
 
  }
- 
+
 
 //$(function(){
    console.log('ui_item.js in');
    GetQueryString();
    console.log('こんにちわ　'+myName+'さん');
-   document.getElementById('username1').value=myName;
+   //document.getElementById('username1').value=myName;
 
    // サーバから取得したデータを、htmlテーブルに追加
    var showTable = function(data) {
