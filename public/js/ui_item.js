@@ -50,7 +50,9 @@ $(function(){
              .append("<td>" + data.item2 + "</td>")
              .append("<td>" + data.item3 + "</td>")
              .append("<td>" + data.item4 + "</td>")
-             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>")
+             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
+    makedelite();
+
     };
 
    // tops_追加ボタン（index.htmlのid=add）押下時 実行
@@ -211,7 +213,7 @@ $(function(){
     }
 
 // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
-
+function makedelite(){
   $('.delite_button').on('click',function(){
     alert('hoge')
 
@@ -234,6 +236,7 @@ $(function(){
     error: function(data) { console.log('error remove: ' + JSON.stringify(data)); }
     });
   });
+}
 
 
 
