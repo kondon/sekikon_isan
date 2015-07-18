@@ -53,7 +53,7 @@ var db = new (cradle.Connection)(host, port, options).database('itemsdb');
 // 「追加」ボタンの id=add, ui_item.jsの url:'/add'でcall
 app.post('/add', function(req, res){
  var date = new Date();
- var now = date.toFormat("YYYY/MM/DD HH24:MI:SS");
+ var now = date.toFormat("YYYY/MM/DD_HH24:MI:SS");
  req.body.date = now;
 
  // 項目の保存
@@ -123,7 +123,7 @@ var returnTable = function(req,res) {
  if (!err) {
  rows.forEach(function (id, row) {
    console.log("key: %s, row: %s", id, JSON.stringify(row));
-   if(req.body.item1 == row.item1){
+   if(req.body.username == row.username){
       ans_rows[i] = (row);
          i++;
     }
