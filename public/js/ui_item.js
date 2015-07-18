@@ -15,7 +15,7 @@ $(function(){
  .append("<td>" + data.test1 + "</td>")
  .append("<td>" + data.test2 + "</td>")
  .append("<td>" + data.test3 + "</td>")
- .append("<td><img src = '/images/newapp-icon.png' id = "+data.date+" class = 'image-rounded' onClick=delete1(3)></td>")
+ .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'image-rounded' onClick=delete1("+data.id_counter+")></td>")
  };
 
  // tops_追加ボタン（index.htmlのid=add）押下時 実行
@@ -203,7 +203,7 @@ function aaaa(){
 }
 */
 function delete1(obj){
-  console.log(data.date);
+  console.log(obj);
   param.username = $("#usename1").val() || "";
   param.itemname = obj || "";
 

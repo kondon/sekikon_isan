@@ -12,6 +12,8 @@ var express = require('express');
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
+var add_count=0;
+
 
 
 // create a new express server
@@ -52,9 +54,10 @@ var db = new (cradle.Connection)(host, port, options).database('itemsdb');
 
 // 「追加」ボタンの id=add, ui_item.jsの url:'/add'でcall
 app.post('/add', function(req, res){
- var date = new Date();
- var now = date.toFormat("YYYYMMDD_HH24:MI:SS");
- req.body.date = "3";
+add_count++;
+ //var date = new Date();
+ //var now = date.toFormat("YYYYMMDD_HH24:MI:SS");
+ req.body.id_counter = add_count;
 
  // 項目の保存
  db.save(now, req.body);
