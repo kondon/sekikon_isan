@@ -132,31 +132,6 @@ $("#other_add").click(function(e){ e.preventDefault();
  });
 
 
- // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
- function showall(){
-     $("#tableItems").empty();
-     name_input.viewername = myName || "";
-     console.log('name.item1 '+name_input.viewername);
-
-
-     // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
-     $.ajax({
-     type: 'POST',
-     data: JSON.stringify(name_input),
-     contentType: 'application/json',
-     url: '/getAll',
-     success: function(rows) {
-     for(var i=0; i<rows.length; i++) {
-       console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
-       //showTable(rows[i].value);
-       showTable(rows[i]);
-
-     }
-     },
-     error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
-     });
-};
-
  // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
  $("#testtest").click(function(e){ e.preventDefault();
 
@@ -230,6 +205,31 @@ function delete1(obj){
   error: function(data) { console.log('error remove: ' + JSON.stringify(data)); }
   });
 }
+
+// 全件表示ボタン（index.htmlのid=getAll）押下時 実行
+function showall(){
+    $("#tableItems").empty();
+    name_input.viewername = myName || "";
+    console.log('name.item1 '+name_input.viewername);
+
+
+    // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
+    $.ajax({
+    type: 'POST',
+    data: JSON.stringify(name_input),
+    contentType: 'application/json',
+    url: '/getAll',
+    success: function(rows) {
+    for(var i=0; i<rows.length; i++) {
+      console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
+      //showTable(rows[i].value);
+      showTable(rows[i]);
+
+    }
+    },
+    error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
+    });
+};
 
 
 function GetQueryString()
