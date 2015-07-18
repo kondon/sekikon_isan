@@ -35,7 +35,7 @@
  }
 
 
-//$(function(){
+$(function(){
    console.log('ui_item.js in');
    //document.getElementById('username1').value=myName;
 
@@ -50,7 +50,7 @@
              .append("<td>" + data.item2 + "</td>")
              .append("<td>" + data.item3 + "</td>")
              .append("<td>" + data.item4 + "</td>")
-             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'image-rounded' onClick=delete1("+data.id_counter+")></td>")
+             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'delite_button image-rounded' onClick=delete1("+data.id_counter+")></td>")
     };
 
    // tops_追加ボタン（index.htmlのid=add）押下時 実行
@@ -184,7 +184,7 @@ $("#other_add").click(function(e){ e.preventDefault();
      },
      error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
      });
-//});
+});
 
 function showall(){
   $("#tableItems").empty();
@@ -210,6 +210,36 @@ function showall(){
   });
 }
 
+// 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
+
+  $('.delite_button').click(function(){
+
+
+    param.username = myName || "";
+    param.itemname =  $(this).attr('id') || "";
+
+    console.log('param.username '+ param.username);
+    console.log('param.itemname '+ param.itemname);
+
+    $.ajax({
+    type: 'POST',
+    data: JSON.stringify(param),
+    contentType: 'application/json',
+    url: '/remove',
+    success: function(rows) {
+       $("#tableItems").empty();
+       showall();
+
+    },
+    error: function(data) { console.log('error remove: ' + JSON.stringify(data)); }
+    });
+  });
+
+
+
+
+
+
  // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
  $("#testtest").click(function(e){ e.preventDefault();
 
@@ -225,7 +255,13 @@ function showall(){
 
    $("#tableItems").empty();
    });
- });
+
+
+
+
+
+
+});
 
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
 
