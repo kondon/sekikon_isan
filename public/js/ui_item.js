@@ -2,7 +2,7 @@
  var param = {};
  var name_input = {};
  var deletea = {};
- //var aaadao = {test0:'0',test1:'1',test2:'2',test3:'3',date:'333'};
+ var aaadao = {test0:'0',test1:'1',test2:'2',test3:'3',date:'333'};
 $(function(){
  console.log('ui_item.js in');
 
@@ -15,7 +15,7 @@ $(function(){
  .append("<td>" + data.test1 + "</td>")
  .append("<td>" + data.test2 + "</td>")
  .append("<td>" + data.test3 + "</td>")
- .append("<td><img src = './images/newapp-icon.png' value="+data.date+" class = 'image-rounded' onClick=delete1("+data.date+")></td>")
+ .append("<td><img src = './images/newapp-icon.png' id = "+data.date+" class = 'image-rounded' onClick=delete1("+data.date+")></td>")
  };
 
  // tops_追加ボタン（index.htmlのid=add）押下時 実行
@@ -41,9 +41,13 @@ $(function(){
  error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
  });
  });
-
- });
 /*
+ $("#testtest").click(function(e){ e.preventDefault();
+   showTable(aaadao);
+ });
+*/
+
+
  //
  $("#bottom_add").click(function(e){ e.preventDefault();
  param.username = $("#name").val() || "";
@@ -67,7 +71,8 @@ $(function(){
  error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
  });
  });
-
+ });
+/*
  // shoes_追加ボタン（index.htmlのid=add）押下時 実行
  $("#shoes_add").click(function(e){ e.preventDefault();
  param.username = $("#name").val() || "";
@@ -119,6 +124,7 @@ $(function(){
  // 入力項目名を空白に
  $("#item1").val('');
  });
+ });
 
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
  $("#getAll").click(function(e){
@@ -145,7 +151,6 @@ $(function(){
      error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
      });
 });
-
 
  // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
  $("#remove").click(function(e){ e.preventDefault();
@@ -199,6 +204,7 @@ function aaaa(){
 }
 */
 function delete1(obj){
+  console.log(data.date);
   param.username = $("#usename1").val() || "";
   param.itemname = obj || "";
 
