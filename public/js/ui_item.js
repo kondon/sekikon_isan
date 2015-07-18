@@ -9,6 +9,7 @@ $(function(){
  console.log('ui_item.js in');
  GetQueryString();
  console.log('こんにちわ　'+myName+'さん');
+ document.getElementById('username1').value=myName;
 
  // サーバから取得したデータを、htmlテーブルに追加
  var showTable = function(data) {
@@ -53,75 +54,75 @@ $(function(){
 
 
  //
- $("#bottom_add").click(function(e){ e.preventDefault();
- param.username = $("#name").val() || "";
- param.itemname = $("#bottom_name").val() || "";
- param.item1 = $("#bottom_item1").val() || "";
- param.test1 = $("#bottom_item2").val() || "";
- param.test2 = $("#bottom_item3").val() || "";
- param.test3 = $("#bottom_item4").val() || "";
- param.itemtype = 1
+$("#bottom_add").click(function(e){ e.preventDefault();
+   param.username = $("#name").val() || "";
+   param.itemname = $("#bottom_name").val() || "";
+   param.item1 = $("#bottom_item1").val() || "";
+   param.test1 = $("#bottom_item2").val() || "";
+   param.test2 = $("#bottom_item3").val() || "";
+   param.test3 = $("#bottom_item4").val() || "";
+   param.itemtype = 1
 
- // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
- $.ajax({
- type: 'POST',
- data: JSON.stringify(param),
- contentType: 'application/json',
- url: '/add',
- success: function(data) {
- console.log('success add: ' + JSON.stringify(data));
- showTable(data);
- },
- error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
- });
+   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
+   $.ajax({
+     type: 'POST',
+     data: JSON.stringify(param),
+     contentType: 'application/json',
+     url: '/add',
+     success: function(data) {
+       console.log('success add: ' + JSON.stringify(data));
+       showTable(data);
+      },
+     error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
+      });
  });
 
 
  // shoes_追加ボタン（index.htmlのid=add）押下時 実行
- $("#shoes_add").click(function(e){ e.preventDefault();
- param.username = $("#name").val() || "";
- param.itemname = $("#shoes_name").val() || "";
- param.item1 = $("#shoes_item1").val() || "";
- param.test1 = $("#shoes_item2").val() || "";
- param.test2 = $("#shoes_item3").val() || "";
- param.test3 = $("#shoes_item4").val() || "";
- param.itemtype = 2
+$("#shoes_add").click(function(e){ e.preventDefault();
+   param.username = $("#name").val() || "";
+   param.itemname = $("#shoes_name").val() || "";
+   param.item1 = $("#shoes_item1").val() || "";
+   param.test1 = $("#shoes_item2").val() || "";
+   param.test2 = $("#shoes_item3").val() || "";
+   param.test3 = $("#shoes_item4").val() || "";
+   param.itemtype = 2
 
- // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
- $.ajax({
- type: 'POST',
- data: JSON.stringify(param),
- contentType: 'application/json',
- url: '/add',
- success: function(data) {
- console.log('success add: ' + JSON.stringify(data));
- showTable(data);
- },
- error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
- });
+   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
+   $.ajax({
+   type: 'POST',
+   data: JSON.stringify(param),
+   contentType: 'application/json',
+   url: '/add',
+   success: function(data) {
+     console.log('success add: ' + JSON.stringify(data));
+     showTable(data);
+   },
+   error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
+   });
  });
 
  // other_追加ボタン（index.htmlのid=add）押下時 実行
- $("#other_add").click(function(e){ e.preventDefault();
- param.username = $("#name").val() || "";
- param.itemname = $("#other_name").val() || "";
- param.item1 = $("#other_item1").val() || "";
- param.test1 = $("#other_item2").val() || "";
- param.test2 = $("#other_item3").val() || "";
- param.test3 = $("#other_item4").val() || "";
- param.itemtype = 2
+$("#other_add").click(function(e){ e.preventDefault();
+   param.username = $("#name").val() || "";
+   param.itemname = $("#other_name").val() || "";
+   param.item1 = $("#other_item1").val() || "";
+   param.test1 = $("#other_item2").val() || "";
+   param.test2 = $("#other_item3").val() || "";
+   param.test3 = $("#other_item4").val() || "";
+   param.itemtype = 2
 
- // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
- $.ajax({
- type: 'POST',
- data: JSON.stringify(param),
- contentType: 'application/json',
- url: '/add',
- success: function(data) {
- console.log('success add: ' + JSON.stringify(data));
- showTable(data);
- },
- error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
+   // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
+   $.ajax({
+   type: 'POST',
+   data: JSON.stringify(param),
+   contentType: 'application/json',
+   url: '/add',
+   success: function(data) {
+     console.log('success add: ' + JSON.stringify(data));
+     showTable(data);
+   },
+   error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
  });
 
  // 入力項目名を空白に
@@ -159,17 +160,17 @@ $(function(){
  $("#remove").click(function(e){ e.preventDefault();
 
  // POSTでのajaxコールで、サーバーのapp.jsのapp.post呼び出し
- $.ajax({
- type: 'POST',
- data: {},
- contentType: 'application/json',
- url: '/removeAll',
- success: function(data) { console.log('success removeAll'); },
- error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
- });
+   $.ajax({
+   type: 'POST',
+   data: {},
+   contentType: 'application/json',
+   url: '/removeAll',
+   success: function(data) { console.log('success removeAll'); },
+   error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
+   });
 
- $("#tableItems").empty();
- });
+   $("#tableItems").empty();
+   });
  });
 
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
