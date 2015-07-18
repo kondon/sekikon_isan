@@ -118,7 +118,7 @@ app.post('/getAll', function(req, res){
 });
 
 var returnTable = function(req,res) {
-  console.log("お名前は" + req.body.item1);
+  console.log("お名前は" + req.body.viewername);
  // 全件検索を、作成したview名 items_view にて実行
  var ans_rows = [];
  var i=0;
@@ -126,7 +126,7 @@ var returnTable = function(req,res) {
  if (!err) {
  rows.forEach(function (id, row) {
    console.log("key: %s, row: %s", id, JSON.stringify(row));
-   if(req.body.username == row.username){
+   if(req.body.viewername == row.username){
       ans_rows[i] = (row);
          i++;
     }

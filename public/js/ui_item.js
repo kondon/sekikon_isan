@@ -134,8 +134,8 @@ $("#other_add").click(function(e){ e.preventDefault();
  $("#getAll").click(function(e){
       e.preventDefault();
      $("#tableItems").empty();
-     name_input.item1 = $("#name").val() || "";
-     console.log('name.item1 '+name_input.item1);
+     name_input.viewername = myName || "";
+     console.log('name.item1 '+name_input.viewername);
 
 
      // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
