@@ -6,46 +6,46 @@
  var myName;
 
 $(function(){
- console.log('ui_item.js in');
- GetQueryString();
- console.log('こんにちわ　'+myName+'さん');
- document.getElementById('username1').value=myName;
+   console.log('ui_item.js in');
+   GetQueryString();
+   console.log('こんにちわ　'+myName+'さん');
+   document.getElementById('username1').value=myName;
 
- // サーバから取得したデータを、htmlテーブルに追加
- var showTable = function(data) {
-   console.log(data.date);
- $("#tableItems").append("<tr></tr>")
- .find("tr:last")
- .append("<td>" + data.test0 + "</td>")
- .append("<td>" + data.test1 + "</td>")
- .append("<td>" + data.test2 + "</td>")
- .append("<td>" + data.test3 + "</td>")
- .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'image-rounded' onClick=delete1("+data.id_counter+")></td>")
- };
+   // サーバから取得したデータを、htmlテーブルに追加
+   var showTable = function(data) {
+    console.log(data.date);
+    $("#tableItems").append("<tr></tr>")
+             .find("tr:last")
+             .append("<td>" + data.test0 + "</td>")
+             .append("<td>" + data.test1 + "</td>")
+             .append("<td>" + data.test2 + "</td>")
+             .append("<td>" + data.test3 + "</td>")
+             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'image-rounded' onClick=delete1("+data.id_counter+")></td>")
+    };
 
- // tops_追加ボタン（index.htmlのid=add）押下時 実行
- $("#tops_add").click(function(e){ e.preventDefault();
- param.username = $("#username1").val() || "";
- param.itemname = $("#tops_name").val() || "";
- param.item1 = $("#tops_item1").val() || "";
- param.test1 = $("#tops_item2").val() || "";
- param.test2 = $("#tops_item3").val() || "";
- param.test3 = $("#tops_item4").val() || "";
- param.itemtype = 0;
+   // tops_追加ボタン（index.htmlのid=add）押下時 実行
+  $("#tops_add").click(function(e){ e.preventDefault();
+       param.username = $("#username1").val() || "";
+       param.itemname = $("#tops_name").val() || "";
+       param.item1 = $("#tops_item1").val() || "";
+       param.test1 = $("#tops_item2").val() || "";
+       param.test2 = $("#tops_item3").val() || "";
+       param.test3 = $("#tops_item4").val() || "";
+       param.itemtype = 0;
 
- // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
- $.ajax({
- type: 'POST',
- data: JSON.stringify(param),
- contentType: 'application/json',
- url: '/add',
- success: function(data) {
- console.log('success add: ' + JSON.stringify(data));
- showTable(data);
- },
- error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
- });
- });
+       // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
+       $.ajax({
+       type: 'POST',
+       data: JSON.stringify(param),
+       contentType: 'application/json',
+       url: '/add',
+       success: function(data) {
+       console.log('success add: ' + JSON.stringify(data));
+       showTable(data);
+       },
+       error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
+       });
+   });
 /*
  $("#testtest").click(function(e){ e.preventDefault();
    showTable(aaadao);
@@ -126,7 +126,7 @@ $("#other_add").click(function(e){ e.preventDefault();
  });
 
  // 入力項目名を空白に
- $("#item1").val('');
+ //$("#item1").val('');
  });
 
 
@@ -157,7 +157,7 @@ $("#other_add").click(function(e){ e.preventDefault();
 });
 
  // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
- $("#remove").click(function(e){ e.preventDefault();
+ $("#testtest").click(function(e){ e.preventDefault();
 
  // POSTでのajaxコールで、サーバーのapp.jsのapp.post呼び出し
    $.ajax({
