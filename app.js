@@ -74,10 +74,10 @@ app.post('/removeAll', function(req, res){
  db.view('items/items_view', function (err, rows) {
  if (!err) {
  rows.forEach(function (id, row) {
-   if(req.body.item1 == row.item1){
+   //if(req.body.item1 == row.item1){
      db.remove(id);
      console.log("removed key is: %s", id);
-   }
+   //}
   }
  );
  }
