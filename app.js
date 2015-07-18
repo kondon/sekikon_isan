@@ -53,8 +53,8 @@ var db = new (cradle.Connection)(host, port, options).database('itemsdb');
 // 「追加」ボタンの id=add, ui_item.jsの url:'/add'でcall
 app.post('/add', function(req, res){
  var date = new Date();
- var now = date.toFormat("YYYY/MM/DD_HH24:MI:SS");
- req.body.date = now;
+ var now = date.toFormat("YYYYMMDD_HH24:MI:SS");
+ req.body.date = "3";
 
  // 項目の保存
  db.save(now, req.body);
