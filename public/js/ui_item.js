@@ -3,8 +3,12 @@
  var name_input = {};
  var deletea = {};
  var aaadao = {test0:'0',test1:'1',test2:'2',test3:'3',date:'333'};
+ var myName;
+
 $(function(){
  console.log('ui_item.js in');
+ GetQueryString();
+ console.log('こんにちわ　'+myName+'さん');
 
  // サーバから取得したデータを、htmlテーブルに追加
  var showTable = function(data) {
@@ -217,4 +221,32 @@ function delete1(obj){
   },
   error: function(data) { console.log('error remove: ' + JSON.stringify(data)); }
   });
+}
+
+
+function GetQueryString()
+{
+    var result = {};
+    if( 1 < window.location.search.length )
+    {
+        // 最初の1文字 (?記号) を除いた文字列を取得する
+        var query = window.location.search.substring( 1 );
+
+        // クエリの区切り記号 (&) で文字列を配列に分割する
+        var parameters = query.split( '&' );
+
+        for( var i = 0; i < parameters.length; i++ )
+        {
+            // パラメータ名とパラメータ値に分割する
+            var element = parameters[ i ].split( '=' );
+
+            var paramName = decodeURIComponent( element[ 0 ] );
+            var paramValue = decodeURIComponent( element[ 1 ] );
+
+            // パラメータ名をキーとして連想配列に追加する
+            result[ paramName ] = paramValue;
+        }
+    }
+    myName = result["namae"];
+
 }
