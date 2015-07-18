@@ -25,12 +25,12 @@ $(function(){
 
    // tops_追加ボタン（index.htmlのid=add）押下時 実行
   $("#tops_add").click(function(e){ e.preventDefault();
-       param.username = $("#username1").val() || "";
+       param.username = myName || "";
        param.itemname = $("#tops_name").val() || "";
        param.item1 = $("#tops_item1").val() || "";
-       param.test1 = $("#tops_item2").val() || "";
-       param.test2 = $("#tops_item3").val() || "";
-       param.test3 = $("#tops_item4").val() || "";
+       param.item2 = $("#tops_item2").val() || "";
+       param.item3 = $("#tops_item3").val() || "";
+       param.item4 = $("#tops_item4").val() || "";
        param.itemtype = 0;
 
        // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
