@@ -60,7 +60,7 @@ add_count++;
  req.body.id_counter = add_count;
 
  // 項目の保存
- db.save(add_count, req.body);
+ db.save(String(add_count), req.body);
  console.log('app.js saved: ' + JSON.stringify(req.body));
 
  res.send(req.body);
