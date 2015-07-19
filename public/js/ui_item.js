@@ -215,7 +215,7 @@ $(function(){
 // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
 function makedelite(){
   console.log('makedelite 作成');
-  $('#delite_button').on('click',function(){
+  $('.delite_button').on('click',function(){
     alert('delite_button')
 
     param.username = myName || "";
