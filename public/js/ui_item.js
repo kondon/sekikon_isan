@@ -213,9 +213,10 @@ $(function(){
     }
 
 // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
-function makedelite(id){
+function makedelite(){
+  console.log('makedelite 作成');
   $('#delite_button').on('click',function(){
-    //alert('hoge')
+    alert('delite_button')
 
     param.username = myName || "";
     param.id_counter =  $(this).attr('id') || "";
