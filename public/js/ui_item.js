@@ -216,7 +216,7 @@ $(function(){
 function makedelite(){
   console.log('makedelite 作成');
   $('.delite_button').on('click',function(){
-    alert('delite_button')
+    //alert('delite_button')
 
     param.username = myName || "";
     param.id_counter =  $(this).attr('id') || "";
@@ -292,7 +292,7 @@ function cheack(){
 
 //kondo file選択画面疑似操作
 function file_up_giji(){
-	var file_button = document.getElementById( 'file_button' );
+	var file_button = document.getElementById( 'tops_file_button' );
 	//var file_button_giji = document.getElementById( 'file_button_giji' );
 
 	file_button.click();
