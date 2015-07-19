@@ -230,6 +230,7 @@ function makedelite(){
     url: '/remove',
     success: function(rows) {
        $("#tableItems").empty();
+       console.log('lets show all ');
        showall();
 
     },
@@ -300,6 +301,7 @@ function aaaa(){
   showTable(aaa);
 }
 */
+/*
 function delete1(obj){
   console.log(obj);
   param.username = myName || "";
@@ -321,3 +323,4 @@ function delete1(obj){
   error: function(data) { console.log('error remove: ' + JSON.stringify(data)); }
   });
 }
+*/
