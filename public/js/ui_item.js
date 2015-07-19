@@ -41,7 +41,7 @@ $(function(){
 
    // サーバから取得したデータを、htmlテーブルに追加
    var showTable = function(data) {
-    console.log(data.username);
+    console.log('これを追加'+data.itemname);
 
     $("#tableItems").append("<tr></tr>")
              .find("tr:last")
@@ -167,7 +167,7 @@ $(function(){
       e.preventDefault();
      $("#tableItems").empty();
      name_input.viewername = myName || "";
-     console.log('name.item1 '+name_input.viewername);
+     console.log('getAll 押されました　name.item1 '+name_input.viewername);
 
 
      // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
@@ -178,7 +178,7 @@ $(function(){
            url: '/getAll',
            success: function(rows) {
            for(var i=0; i<rows.length; i++) {
-             console.log(' row '+ i +": "+ JSON.stringify(rows[i]));
+             console.log('これをテーブルに追加 row '+ i +": "+ JSON.stringify(rows[i]));
              //showTable(rows[i].value);
              showTable(rows[i]);
 
@@ -215,7 +215,7 @@ $(function(){
 // 全件削除ボタン（index.htmlのid=removeAll）押下時 実行
 function makedelite(id){
   $('#getAll').on('click',function(){
-    alert('hoge')
+    //alert('hoge')
 
     param.username = myName || "";
     param.id_counter =  $(this).attr('id') || "";
@@ -231,7 +231,7 @@ function makedelite(id){
     success: function(rows) {
        $("#tableItems").empty();
        console.log('lets show all ');
-       showall();
+       //showall();
 
     },
     error: function(data) { console.log('error remove: ' + JSON.stringify(data)); }
