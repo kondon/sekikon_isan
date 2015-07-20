@@ -75,7 +75,7 @@ $(function(){
        var now = now_time();
        var file_name = now + '_'+data +'.jpg';
        console.log('この名前で保存しておきます: ' + file_name);
-       //file_upload();
+       file_upload(file_name);
        //showTable(data);
        },
        error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
@@ -86,83 +86,6 @@ $(function(){
        showTable(aaadao);
      });
     */
-
-
-     //
-    $("#bottom_add").click(function(e){ e.preventDefault();
-               param.username = $("#name").val() || "";
-               param.itemname = $("#bottom_name").val() || "";
-               param.item1 = $("#bottom_item1").val() || "";
-               param.test1 = $("#bottom_item2").val() || "";
-               param.test2 = $("#bottom_item3").val() || "";
-               param.test3 = $("#bottom_item4").val() || "";
-               param.itemtype = 1
-
-           // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
-           $.ajax({
-             type: 'POST',
-             data: JSON.stringify(param),
-             contentType: 'application/json',
-             url: '/add',
-             success: function(data) {
-               console.log('success add: ' + JSON.stringify(data));
-               showTable(data);
-              },
-             error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
-              });
-    });
-
-
- // shoes_追加ボタン（index.htmlのid=add）押下時 実行
-    $("#shoes_add").click(function(e){ e.preventDefault();
-       param.username = $("#name").val() || "";
-       param.itemname = $("#shoes_name").val() || "";
-       param.item1 = $("#shoes_item1").val() || "";
-       param.test1 = $("#shoes_item2").val() || "";
-       param.test2 = $("#shoes_item3").val() || "";
-       param.test3 = $("#shoes_item4").val() || "";
-       param.itemtype = 2
-
-       // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
-       $.ajax({
-       type: 'POST',
-       data: JSON.stringify(param),
-       contentType: 'application/json',
-       url: '/add',
-       success: function(data) {
-         console.log('success add: ' + JSON.stringify(data));
-         showTable(data);
-       },
-       error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
-       });
-     });
-
- // other_追加ボタン（index.htmlのid=add）押下時 実行
-    $("#other_add").click(function(e){ e.preventDefault();
-       param.username = $("#name").val() || "";
-       param.itemname = $("#other_name").val() || "";
-       param.item1 = $("#other_item1").val() || "";
-       param.test1 = $("#other_item2").val() || "";
-       param.test2 = $("#other_item3").val() || "";
-       param.test3 = $("#other_item4").val() || "";
-       param.itemtype = 2
-
-       // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
-       $.ajax({
-             type: 'POST',
-             data: JSON.stringify(param),
-             contentType: 'application/json',
-             url: '/add',
-             success: function(data) {
-               console.log('success add: ' + JSON.stringify(data));
-               showTable(data);
-             },
-             error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
-           });
-
-       // 入力項目名を空白に
-       //$("#item1").val('');
-    });
 
 
  // 全件表示ボタン（index.htmlのid=getAll）押下時 実行
@@ -273,6 +196,7 @@ function makedelite(){
      alert('up!!');
       var src = document.getElementById('user_clothes').src;
       console.log('これを送信'+src);
+      console.log('この名前で送信'+name);
     //var hostUrl= 'http://localhost/bluemix_charenge/save.php'; // データ送信先
     var hostUrl= 'http://52.68.216.182/blue/save.php'; // データ送信先
     $.ajax({
@@ -282,7 +206,7 @@ function makedelite(){
         //jsonpCallback: 'callback',
         dataType: 'json',
         data : {img : document.getElementById('user_clothes').src,
-                name : 'hoge.jpg'},
+                name : name},
         timeout:10000,
         success: function(data) {
             // 成功
