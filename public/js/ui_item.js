@@ -50,7 +50,7 @@ $(function(){
              .append("<td>" + data.item2 + "</td>")
              .append("<td>" + data.item3 + "</td>")
              .append("<td>" + data.item4 + "</td>")
-             .append("<td><img src = '/images/newapp-icon.png' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
+             .append("<td><img src = 'https://52.69.211.101/blue/send_img.php' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
     makedelite();
 
     };
@@ -72,8 +72,9 @@ $(function(){
        url: '/add',
        success: function(data) {
        console.log('この番号で登録いたしました: ' + data);
-       var now = now_time();
-       var file_name = now + '_'+data +'.jpg';
+       //var now = now_time();
+       //var file_name = now + '_'+data +'.jpg';
+       var file_name = data +'.jpg';
        console.log('この名前で保存しておきます: ' + file_name);
        file_upload(file_name);
        //showTable(data);
@@ -220,6 +221,32 @@ function makedelite(){
     });
   //});
   };
+
+
+    function file_get(name){
+       alert('ほしい!!');
+        console.log('この名前がほしい'+name);
+      //var hostUrl= 'http://localhost/bluemix_charenge/save.php'; // データ送信先
+      var hostUrl= 'https://52.69.211.101/blue/send_img.php'; // データ送信先
+      $.ajax({
+          url: hostUrl,
+          type:'POST',
+          //dataType: 'jsonp',
+          //jsonpCallback: 'callback',
+          dataType: 'json',
+          data : {name : name},
+          timeout:10000,
+          success: function(data) {
+              // 成功
+              alert("ok");
+              console.log(data);
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+              // 失敗
+              alert("error");
+          }
+      });
+    };
 
   function now_time(){
     myD = new Date();
