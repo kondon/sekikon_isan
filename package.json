@@ -10,7 +10,8 @@
 		"cfenv": "1.0.x",
 		"body-parser": "*",
 		"date-utils": "*",
-    "cradle": "0.6.x"
+    "cradle": "0.6.x",
+		"oauth":"*"
 	},
 	"repository": {}
 }
