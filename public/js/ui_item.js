@@ -339,7 +339,7 @@ $(function(){
             } else {
                 if(file.type.match('image.*')){
                     if(!(0 < selfImg.size())){
-                        selfFile.append('<img id ="user_clothes" alt="" class="imgView">');
+                        selfFile.append('<img id ="user_clothes" width="10%" height="10%" alt="" class="imgView">');
                     }
                     var prevElm = selfFile.find('.imgView');
                     fileRdr.onload = function() {
