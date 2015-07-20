@@ -198,7 +198,7 @@ function makedelite(){
       console.log('これを送信'+src);
       console.log('この名前で送信'+name);
     //var hostUrl= 'http://localhost/bluemix_charenge/save.php'; // データ送信先
-    var hostUrl= 'http://52.68.216.182/blue/save.php'; // データ送信先
+    var hostUrl= 'https://52.69.211.101/blue/save.php'; // データ送信先
     $.ajax({
         url: hostUrl,
         type:'POST',
