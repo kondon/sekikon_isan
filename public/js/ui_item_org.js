@@ -64,6 +64,7 @@ $(function(){
        param.item3 = $("#tops_item3").val() || "";
        param.item4 = $("#tops_item4").val() || "";
        param.itemtype = 0;
+
        // POSTでのajaxコールで、サーバーのapp.jsのapp.post /add呼び出し
        $.ajax({
        type: 'POST',
@@ -71,7 +72,7 @@ $(function(){
        contentType: 'application/json',
        url: '/add',
        success: function(data) {
-       console.log('ADD success add: ' + JSON.stringify(data));
+       console.log('success add: ' + JSON.stringify(data));
        //showTable(data);
        },
        error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
@@ -264,56 +265,6 @@ function makedelite(){
 
 
 
-//$("#file_upload_test").click(function(e){ e.preventDefault();
-  function file_upload(name){
-     alert('up!!');
-      var src = document.getElementById('user_clothes').src;
-      console.log('これを送信'+src);
-    //var hostUrl= 'http://localhost/bluemix_charenge/save.php'; // データ送信先
-    var hostUrl= 'http://52.68.216.182/blue/save.php'; // データ送信先
-    $.ajax({
-        url: hostUrl,
-        type:'POST',
-        //dataType: 'jsonp',
-        //jsonpCallback: 'callback',
-        dataType: 'json',
-        data : {img : document.getElementById('user_clothes').src,
-                name : 'hoge.jpg'},
-        timeout:10000,
-        success: function(data) {
-            // 成功
-            alert("ok");
-            console.log(data);
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) {
-            // 失敗
-            alert("error");
-        }
-    });
-  //});
-  }
-
-
-   // POSTでのajaxコールで、サーバーのapp.jsのapp.post呼び出し
-   /*
-     $.ajax({
-     type: 'POST',
-     data: {},
-     contentType: 'application/json',
-     url: '/removeAll',
-     success: function(data) { console.log('success removeAll'); },
-     error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
-     });
-
-     $("#tableItems").empty();
-
-     });
-     */
-
-
-
-
-
 
 });
 
@@ -346,47 +297,6 @@ function file_up_giji(){
 
 	file_button.click();
 }
-
-$(function(){
-    var setFileInput = $('.imgInput');
-
-    setFileInput.each(function(){
-        var selfFile = $(this),
-        selfInput = $(this).find('input[type=file]');
-
-        selfInput.change(function(){
-            var file = $(this).prop('files')[0],
-            fileRdr = new FileReader(),
-            selfImg = selfFile.find('.imgView');
-
-            if(!this.files.length){
-                if(0 < selfImg.size()){
-                    selfImg.remove();
-                    return;
-                }
-            } else {
-                if(file.type.match('image.*')){
-                    if(!(0 < selfImg.size())){
-                        selfFile.append('<img id ="user_clothes" alt="" class="imgView">');
-                    }
-                    var prevElm = selfFile.find('.imgView');
-                    fileRdr.onload = function() {
-                        prevElm.attr('src', fileRdr.result);
-                    }
-                    fileRdr.readAsDataURL(file);
-                } else {
-                    if(0 < selfImg.size()){
-                        selfImg.remove();
-                        return;
-                    }
-                }
-            }
-        });
-    });
-});
-
-
-
 /*
 function aaaa(){
   showTable(aaa);
