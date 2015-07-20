@@ -63,7 +63,7 @@ add_count++;
  db.save(String(add_count), req.body);
  console.log('app.js saved: ' + JSON.stringify(req.body));
 
- res.send(req.body.id_counter);
+ res.send(req.body.id_counter + "");
 });
 
 //「全件削除」ボタンの id=removeAll, ui_item.jsの url:'/removeAll'でcall
