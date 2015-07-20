@@ -50,7 +50,7 @@ $(function(){
              .append("<td>" + data.item2 + "</td>")
              .append("<td>" + data.item3 + "</td>")
              .append("<td>" + data.item4 + "</td>")
-             .append("<td><img src = 'https://52.69.211.101/blue/send_img.php' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
+             .append("<td><img src = 'https://52.69.211.101/blue/send_img.php?id="+data.id_counter+"' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
     makedelite();
 
     };
