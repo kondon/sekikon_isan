@@ -72,6 +72,11 @@ $(function(){
        url: '/add',
        success: function(data) {
        console.log('この番号で登録いたしました: ' + data);
+       var date = new Date();
+       var now = date.toFormat("YYYYMMDD_HH24:MI:SS");
+       var file_name = now + '_'+data +'.jpg';
+       console.log('この名前で保存しておきます: ' + file_name);
+       //file_upload();
        //showTable(data);
        },
        error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
