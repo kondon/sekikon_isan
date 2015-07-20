@@ -352,6 +352,7 @@ $(function(){
                         return;
                     }
                 }
+                look_img_change();
             }
         });
     });
@@ -359,6 +360,12 @@ $(function(){
 
 
 
+function look_img_change() {
+  alert('size change');
+    var img = document.getElementById("user_clothes");
+    img.width = 100;
+	  img.height = 100;
+}
 /*
 function aaaa(){
   showTable(aaa);
