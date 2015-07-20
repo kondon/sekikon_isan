@@ -71,7 +71,7 @@ $(function(){
        contentType: 'application/json',
        url: '/add',
        success: function(data) {
-       console.log('ADD success add: ' + JSON.stringify(data));
+       console.log('この番号で登録いたしました: ' + data);
        //showTable(data);
        },
        error: function(data) { console.log('error add: ' + JSON.stringify(data)); }
