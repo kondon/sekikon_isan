@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------
 // node.js starter application for Bluemix
 //------------------------------------------------------------------------------
-
+var  OAuth = require('oauth').OAuth; //node-oauthをrequire
 // This application uses express as it's web server
 // for more info, see: http://expressjs.com
 var express = require('express');
