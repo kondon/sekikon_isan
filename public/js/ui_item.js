@@ -72,8 +72,7 @@ $(function(){
        url: '/add',
        success: function(data) {
        console.log('この番号で登録いたしました: ' + data);
-       var date = new Date();
-       var now = date.toFormat("YYYYMMDD_HH24:MI:SS");
+       var now = now_time();
        var file_name = now + '_'+data +'.jpg';
        console.log('この名前で保存しておきます: ' + file_name);
        //file_upload();
@@ -296,7 +295,24 @@ function makedelite(){
         }
     });
   //});
+  };
+
+  function now_time(){
+    myD = new Date();
+    myYear = myD.getFullYear();
+    myMonth = myD.getMonth() + 1;
+    myDate = myD.getDate();
+    myDay = myD.getDay();
+    myHours = myD.getHours();
+    myMinutes = myD.getMinutes();
+    mySeconds = myD.getSeconds();
+
+    now_time = myYear + myMonth + myDate+'_'+myHours+myMinutes+mySeconds;
+    return now_time;
+
   }
+
+
 
 
    // POSTでのajaxコールで、サーバーのapp.jsのapp.post呼び出し
