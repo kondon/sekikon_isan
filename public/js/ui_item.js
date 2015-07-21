@@ -195,7 +195,9 @@ function makedelite(){
 //$("#file_upload_test").click(function(e){ e.preventDefault();
   function file_upload(name){
      alert('up!!');
-      var src = document.getElementById('user_clothes').src;
+      //var src = document.getElementById('user_clothes').src;
+      var canvas = document.getElementById('canvas');
+      var canvas_img = canvas.toDataURL('image/png', 0.8);
       console.log('これを送信'+src);
       console.log('この名前で送信'+name);
     //var hostUrl= 'http://localhost/bluemix_charenge/save.php'; // データ送信先
@@ -206,7 +208,8 @@ function makedelite(){
         //dataType: 'jsonp',
         //jsonpCallback: 'callback',
         dataType: 'json',
-        data : {img : document.getElementById('user_clothes').src,
+        //data : {img : document.getElementById('user_clothes').src,
+        data : {img : canvas_img,
                 name : name},
         timeout:10000,
         success: function(data) {
