@@ -155,6 +155,7 @@ var cheackTable = function(req,res) {
 
  db.view('items/items_view', function (err, rows) {
    var ans;
+   var ans_row;
  if (!err) {
    var king_record = 1000;
    var king_record_id = -1;
@@ -165,6 +166,7 @@ var cheackTable = function(req,res) {
          king_record_id = row.id_counter;
          console.log("king_record_id:" + king_record_id);
          console.log("diff_king_record:" + king_record);
+         ans_row = row;
        }
      }
      //console.log("key: %s, row: %s", id, JSON.stringify(row));
@@ -179,7 +181,7 @@ var cheackTable = function(req,res) {
    ans = -1;
  }
 
- res.send(ans);
+ res.send(ans_row);
  });
 };
 
