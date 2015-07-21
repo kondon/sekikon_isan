@@ -295,11 +295,20 @@ function makedelite(){
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
 
 function cheack(){
-   console.log('DEBUG param.item1 : '+param.item1);
-   console.log('DEBUG param.test0 : '+param.test0);
-   console.log('DEBUG param.test1 : '+param.test1);
-   console.log('DEBUG param.test2 : '+param.test2);
-   console.log('DEBUG param.test3 : '+param.test3);
+  param.username = myName || "";
+  param.itemname = $("#tops_name").val() || "";
+  param.item1 = $("#tops_item1").val() || "";
+  param.item2 = $("#tops_item2").val() || "";
+  param.item3 = $("#tops_item3").val() || "";
+  param.item4 = $("#tops_item4").val() || "";
+  param.itemtype = 0;
+  console.log('DEBUG param.username : '+param.username);
+  console.log('DEBUG param.itemname : '+param.itemname);
+  console.log('DEBUG param.item1 : '+param.item1);
+  console.log('DEBUG param.item2 : '+param.item2);
+  console.log('DEBUG param.item3 : '+param.item3);
+  console.log('DEBUG param.item4 : '+param.item4);
+
 
    // POSTでのajaxコールで、サーバーのapp.jsのapp.post /getAll呼び出し
    $.ajax({

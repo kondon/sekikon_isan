@@ -146,21 +146,29 @@ app.post('/cheackAll', function(req, res){
 
 var cheackTable = function(req,res) {
  // 全件検索を、作成したview名 items_view にて実行
- console.log("bycliant test0: %s", req.body.test0);
+ console.log("bycliant test0: %s", req.body.username);
+ console.log("bycliant test0: %s", req.body.itemname);
+ console.log("bycliant test0: %s", req.body.item1);
+ console.log("bycliant test0: %s", req.body.item2);
+ console.log("bycliant test0: %s", req.body.item3);
+ console.log("bycliant test0: %s", req.body.item4);
+
  db.view('items/items_view', function (err, rows) {
    var ans;
  if (!err) {
    var king_record = 1000;
    var king_record_id = -1;
    rows.forEach(function (id, row) {
-     if(req.body.item1 == row.item1){
-       if(king_record > Math.abs(req.body.test0 - row.test0)){
-         king_record = Math.abs(req.body.test0 - row.test0);
-         king_record_id = row.test2;
+     if(req.body.username == row.username){
+       if(king_record > Math.abs(req.body.item1 - row.item1)){
+         king_record = Math.abs(req.body.item1 - row.item1);
+         king_record_id = row.id_counter;
+         console.log("king_record_id:" + king_record_id);
+         console.log("diff_king_record:" + king_record);
        }
      }
-     console.log("key: %s, row: %s", id, JSON.stringify(row));
-     console.log("key: %s, row: %s", id, (row.item1));
+     //console.log("key: %s, row: %s", id, JSON.stringify(row));
+     //console.log("key: %s, row: %s", id, (row.item1));
 
    });
    ans = king_record_id;
