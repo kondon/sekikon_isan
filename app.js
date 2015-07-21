@@ -165,12 +165,14 @@ var cheackTable = function(req,res) {
      if(req.body.username == row.username){
        switch (req.body.itemtype){
           case 1:
+          console.log("king_record_id:" + king_record_id);
+          console.log("NEWitem:" + Math.abs(req.body.item1 - row.item1));
           if(king_record > Math.abs(req.body.item1 - row.item1)){
               king_record = Math.abs(req.body.item1 - row.item1);
               king_record_id = row.id_counter;
               console.log("case 1");
-              console.log("king_record_id:" + king_record_id);
-              console.log("diff_king_record:" + king_record);
+              console.log("ok king_record_id:" + king_record_id);
+              console.log("ok diff_king_record:" + king_record);
               ans_row = row;
               ans_row.itemtype =1;
           }
