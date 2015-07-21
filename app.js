@@ -165,6 +165,7 @@ var cheackTable = function(req,res) {
      if(req.body.username == row.username){
        switch (req.body.itemtype){
           case 1:
+          if(king_record > Math.abs(req.body.item1 - row.item1)){
               king_record = Math.abs(req.body.item1 - row.item1);
               king_record_id = row.id_counter;
               console.log("case 1");
@@ -172,8 +173,10 @@ var cheackTable = function(req,res) {
               console.log("diff_king_record:" + king_record);
               ans_row = row;
               ans_row.itemtype =1;
+          }
               break;
           case 2:
+          if(king_record > Math.abs(req.body.item2 - row.item2)){
               king_record = Math.abs(req.body.item2 - row.item2);
               king_record_id = row.id_counter;
               console.log("case 2");
@@ -181,8 +184,10 @@ var cheackTable = function(req,res) {
               console.log("diff_king_record:" + king_record);
               ans_row = row;
               ans_row.itemtype =2;
+          }
               break;
           case 3:
+          if(king_record > Math.abs(req.body.item3 - row.item3)){
               king_record = Math.abs(req.body.item3 - row.item3);
               king_record_id = row.id_counter;
               console.log("case 3");
@@ -190,8 +195,10 @@ var cheackTable = function(req,res) {
               console.log("diff_king_record:" + king_record);
               ans_row = row;
               ans_row.itemtype =3;
+          }
               break;
           case 4:
+          if(king_record > Math.abs(req.body.item4 - row.item4)){
                 king_record = Math.abs(req.body.item4 - row.item4);
                 king_record_id = row.id_counter;
                 console.log("case 4");
@@ -199,6 +206,7 @@ var cheackTable = function(req,res) {
                 console.log("diff_king_record:" + king_record);
                 ans_row = row;
                 ans_row.itemtype =4;
+          }
                 break;
           default:
           console.log("case defalut");
