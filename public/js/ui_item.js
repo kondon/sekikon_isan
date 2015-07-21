@@ -305,7 +305,6 @@ function makedelite(){
            .append("<td id='3'>" + data.item3 + "</td>")
            .append("<td id='4'>" + data.item4 + "</td>")
            .append("<td><img src = 'https://52.69.211.101/blue/send_img.php?id="+data.id_counter+"' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
-  document.getElementById('4');
   var elem = $(data.itemtype);
   elem.className = 'warning';
   //makedelite();
