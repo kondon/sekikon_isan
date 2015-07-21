@@ -340,7 +340,7 @@ function cheack(id){
    url: '/cheackAll',
    success: function(rows) {
       alert("答えは"+ rows);
-      $("#recomendItems").empty();
+      //$("#recomendItems").empty();
       recomend_showTable(rows);
    },
    error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
