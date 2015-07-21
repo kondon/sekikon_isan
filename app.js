@@ -171,6 +171,7 @@ var cheackTable = function(req,res) {
               console.log("king_record_id:" + king_record_id);
               console.log("diff_king_record:" + king_record);
               ans_row = row;
+              ans_row.itemtype =1;
               break;
           case 2:
               king_record = Math.abs(req.body.item2 - row.item2);
@@ -179,6 +180,7 @@ var cheackTable = function(req,res) {
               console.log("king_record_id:" + king_record_id);
               console.log("diff_king_record:" + king_record);
               ans_row = row;
+              ans_row.itemtype =2;
               break;
           case 3:
               king_record = Math.abs(req.body.item3 - row.item3);
@@ -187,6 +189,7 @@ var cheackTable = function(req,res) {
               console.log("king_record_id:" + king_record_id);
               console.log("diff_king_record:" + king_record);
               ans_row = row;
+              ans_row.itemtype =3;
               break;
           case 4:
                 king_record = Math.abs(req.body.item4 - row.item4);
@@ -195,6 +198,7 @@ var cheackTable = function(req,res) {
                 console.log("king_record_id:" + king_record_id);
                 console.log("diff_king_record:" + king_record);
                 ans_row = row;
+                ans_row.itemtype =4;
                 break;
           default:
           console.log("case defalut");
