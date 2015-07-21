@@ -299,7 +299,7 @@ function makedelite(){
   console.log('これを追加'+data.itemtype);
   append_cnt++;
 
-  $("#recomendItems").append("<tr className ='' id='0'></tr>")
+  $("#recomendItems").append("<tr className ='' id='type0_"+append_cnt+"'></tr>")
            .find("tr:last")
            .append("<td>" + data.itemname + "</td>")
            .append("<td className ='' id='type1_"+append_cnt+"'>" + data.item1 + "</td>")

@@ -211,7 +211,19 @@ var cheackTable = function(req,res) {
           }
                 break;
           default:
-          console.log("case defalut");
+            console.log("case defalut");
+            var sum = Math.abs(req.body.item1 - row.item1) + Math.abs(req.body.item2 - row.item2) + Math.abs(req.body.item3 - row.item3) + Math.abs(req.body.item4 - row.item4);
+            console.log("sum is " + sum);
+            if(king_record > sum){
+                  king_record = sum;
+                  king_record_id = row.id_counter;
+                  console.log("case default");
+                  console.log("king_record_id:" + king_record_id);
+                  console.log("diff_king_record:" + king_record);
+                  ans_row = row;
+                  ans_row.itemtype =0;
+            }
+            break;
                 //king_record = Math.abs(req.body.item1 - row.item1);
                 //king_record_id = row.id_counter;
                 //console.log("king_record_id:" + king_record_id);
