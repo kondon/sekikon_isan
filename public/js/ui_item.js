@@ -349,6 +349,11 @@ function cheack(id){
    });
  }
 
+ function remove_recomend(){
+   $("#recomendItems").empty();
+ }
+
+
 //kondo file選択画面疑似操作
 function file_up_giji(){
 	var file_button = document.getElementById( 'tops_file_button' );
