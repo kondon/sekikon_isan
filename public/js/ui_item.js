@@ -55,6 +55,21 @@ $(function(){
 
     };
 
+    var recomend_showTable = function(data) {
+     console.log('これを追加'+data.itemname);
+
+     $("#recomendItems").append("<tr></tr>")
+              .find("tr:last")
+              .append("<td>" + data.itemname + "</td>")
+              .append("<td>" + data.item1 + "</td>")
+              .append("<td>" + data.item2 + "</td>")
+              .append("<td>" + data.item3 + "</td>")
+              .append("<td>" + data.item4 + "</td>")
+              .append("<td><img src = 'https://52.69.211.101/blue/send_img.php?id="+data.id_counter+"' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
+     //makedelite();
+
+     };
+
    // tops_追加ボタン（index.htmlのid=add）押下時 実行
   $("#tops_add").click(function(e){ e.preventDefault();
        param.username = myName || "";
@@ -318,6 +333,8 @@ function cheack(){
    url: '/cheackAll',
    success: function(rows) {
       alert("答えは"+ rows);
+      $("#recomendItems").empty();
+      recomend_showTable(rows);
    },
    error: function(data) { console.log('error getAll: ' + JSON.stringify(data)); }
    });
