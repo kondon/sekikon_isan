@@ -300,13 +300,15 @@ function makedelite(){
   $("#recomendItems").append("<tr className ='' id='0'></tr>")
            .find("tr:last")
            .append("<td>" + data.itemname + "</td>")
-           .append("<td className ='' id='1'>" + data.item1 + "</td>")
-           .append("<td className ='' id='2'>" + data.item2 + "</td>")
-           .append("<td className ='' id='3'>" + data.item3 + "</td>")
-           .append("<td className ='' id='4'>" + data.item4 + "</td>")
+           .append("<td className ='' id='type1'>" + data.item1 + "</td>")
+           .append("<td className ='' id='type2'>" + data.item2 + "</td>")
+           .append("<td className ='' id='type3'>" + data.item3 + "</td>")
+           .append("<td className ='' id='type4'>" + data.item4 + "</td>")
            .append("<td><img src = 'https://52.69.211.101/blue/send_img.php?id="+data.id_counter+"' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
-  var elem = $(data.itemtype);
-  console.log('これを追加'+elem);
+  var type_name = 'type'+data.itemtype;
+  console.log('type_name is '+type_name);
+  var elem = $(type_name);
+  console.log('これを書き換え'+elem.id);
   elem.className = 'warning';
   //makedelite();
 
