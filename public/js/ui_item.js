@@ -198,7 +198,7 @@ function makedelite(){
       //var src = document.getElementById('user_clothes').src;
       var canvas = document.getElementById('canvas');
       var canvas_img = canvas.toDataURL('image/png', 0.8);
-      console.log('これを送信'+src);
+      console.log('これを送信'+canvas_img);
       console.log('この名前で送信'+name);
     //var hostUrl= 'http://localhost/bluemix_charenge/save.php'; // データ送信先
     var hostUrl= 'https://52.69.211.101/blue/save.php'; // データ送信先
