@@ -365,6 +365,34 @@ function look_img_change() {
     var img = document.getElementById("user_clothes");
     img.width = 100;
 	  img.height = 100;
+    img.onload = function() {
+      draw_can(img.src);
+    }
+}
+
+function draw_can(src) {
+      //alert('書くよ');
+    var canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+        var context = canvas.getContext('2d');
+        var image = new Image();
+        image.src = src;
+        //alert(image.src);
+        //canvas.width = 50;
+        //canvas.height = 50;
+        //context.drawImage(image, 0, 0,50,50);
+        //alert('drawed');
+        //file_upload_test('hoge.jpg');
+        //var file_name_pre = now_time();
+        //var file_name = file_name_pre + '.png'
+        image.onload = function() {
+                alert('lets');
+            canvas.width = 25;
+            canvas.height = 25;
+            context.drawImage(image, 0, 0,25,25);
+            //file_upload_test(file_name,canvas);
+        }
+    }
 }
 /*
 function aaaa(){
