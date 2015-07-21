@@ -152,6 +152,7 @@ var cheackTable = function(req,res) {
  console.log("bycliant test0: %s", req.body.item2);
  console.log("bycliant test0: %s", req.body.item3);
  console.log("bycliant test0: %s", req.body.item4);
+ console.log("bycliant itemtype: %s", req.body.itemtype);
 
  db.view('items/items_view', function (err, rows) {
    var ans;
@@ -159,8 +160,52 @@ var cheackTable = function(req,res) {
  if (!err) {
    var king_record = 1000;
    var king_record_id = -1;
+
    rows.forEach(function (id, row) {
      if(req.body.username == row.username){
+       switch (req.body.itemtype){
+          case 1:
+              king_record = Math.abs(req.body.item1 - row.item1);
+              king_record_id = row.id_counter;
+              console.log("case 1");
+              console.log("king_record_id:" + king_record_id);
+              console.log("diff_king_record:" + king_record);
+              ans_row = row;
+              break;
+          case 2:
+              king_record = Math.abs(req.body.item2 - row.item2);
+              king_record_id = row.id_counter;
+              console.log("case 2");
+              console.log("king_record_id:" + king_record_id);
+              console.log("diff_king_record:" + king_record);
+              ans_row = row;
+              break;
+          case 3:
+              king_record = Math.abs(req.body.item3 - row.item3);
+              king_record_id = row.id_counter;
+              console.log("case 3");
+              console.log("king_record_id:" + king_record_id);
+              console.log("diff_king_record:" + king_record);
+              ans_row = row;
+              break;
+          case 4:
+                king_record = Math.abs(req.body.item4 - row.item4);
+                king_record_id = row.id_counter;
+                console.log("case 4");
+                console.log("king_record_id:" + king_record_id);
+                console.log("diff_king_record:" + king_record);
+                ans_row = row;
+                break;
+          default:
+          console.log("case defalut");
+                //king_record = Math.abs(req.body.item1 - row.item1);
+                //king_record_id = row.id_counter;
+                //console.log("king_record_id:" + king_record_id);
+                //console.log("diff_king_record:" + king_record);
+                //ans_row = row;
+                //break;
+        }
+       /*
        if(king_record > Math.abs(req.body.item1 - row.item1)){
          king_record = Math.abs(req.body.item1 - row.item1);
          king_record_id = row.id_counter;
@@ -168,6 +213,7 @@ var cheackTable = function(req,res) {
          console.log("diff_king_record:" + king_record);
          ans_row = row;
        }
+       */
      }
      //console.log("key: %s, row: %s", id, JSON.stringify(row));
      //console.log("key: %s, row: %s", id, (row.item1));
