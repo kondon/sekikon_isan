@@ -307,9 +307,10 @@ function makedelite(){
            .append("<td><img src = 'https://52.69.211.101/blue/send_img.php?id="+data.id_counter+"' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
   var type_name = 'type'+data.itemtype;
   console.log('type_name is '+type_name);
-  var elem = $(type_name);
-  console.log('これを書き換え'+elem.id);
-  elem.className = 'warning';
+  target_tag = document.getElementById(type_name);
+  //var elem = $(type_name);
+  console.log('これを書き換え'+target_tag.id);
+  target_tag.className = 'warning';
   //makedelite();
 
   };
