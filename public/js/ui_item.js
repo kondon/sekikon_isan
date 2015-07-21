@@ -295,15 +295,19 @@ function makedelite(){
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
  var recomend_showTable = function(data) {
   console.log('これを追加'+data.itemname);
+  console.log('これを追加'+data.itemtype);
 
-  $("#recomendItems").append("<tr></tr>")
+  $("#recomendItems").append("<tr id='0'></tr>")
            .find("tr:last")
            .append("<td>" + data.itemname + "</td>")
-           .append("<td>" + data.item1 + "</td>")
-           .append("<td>" + data.item2 + "</td>")
-           .append("<td>" + data.item3 + "</td>")
-           .append("<td>" + data.item4 + "</td>")
+           .append("<td id='1'>" + data.item1 + "</td>")
+           .append("<td id='2'>" + data.item2 + "</td>")
+           .append("<td id='3'>" + data.item3 + "</td>")
+           .append("<td id='4'>" + data.item4 + "</td>")
            .append("<td><img src = 'https://52.69.211.101/blue/send_img.php?id="+data.id_counter+"' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
+  document.getElementById('4');
+  var elem = $(data.itemtype);
+  elem.className = 'warning';
   //makedelite();
 
   };
