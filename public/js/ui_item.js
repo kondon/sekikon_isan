@@ -293,19 +293,21 @@ function makedelite(){
 });
 
  // sekiya 全件表示ボタン（index.htmlのid=getAll）押下時 実行
+ var append_cnt = 0;
  var recomend_showTable = function(data) {
   console.log('これを追加'+data.itemname);
   console.log('これを追加'+data.itemtype);
+  append_cnt++;
 
   $("#recomendItems").append("<tr className ='' id='0'></tr>")
            .find("tr:last")
            .append("<td>" + data.itemname + "</td>")
-           .append("<td className ='' id='type1'>" + data.item1 + "</td>")
-           .append("<td className ='' id='type2'>" + data.item2 + "</td>")
-           .append("<td className ='' id='type3'>" + data.item3 + "</td>")
-           .append("<td className ='' id='type4'>" + data.item4 + "</td>")
+           .append("<td className ='' id='type1_"+append_cnt+"'>" + data.item1 + "</td>")
+           .append("<td className ='' id='type2_"+append_cnt+"'>" + data.item2 + "</td>")
+           .append("<td className ='' id='type3_"+append_cnt+"'>" + data.item3 + "</td>")
+           .append("<td className ='' id='type4_"+append_cnt+"'>" + data.item4 + "</td>")
            .append("<td><img src = 'https://52.69.211.101/blue/send_img.php?id="+data.id_counter+"' id = "+data.id_counter+" class = 'delite_button image-rounded' ></td>");
-  var type_name = 'type'+data.itemtype;
+  var type_name = 'type'+data.itemtype+'_'+append_cnt;
   console.log('type_name is '+type_name);
   target_tag = document.getElementById(type_name);
   //var elem = $(type_name);
